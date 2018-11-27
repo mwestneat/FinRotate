@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C5CF480207185C90013DFC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF47F207185C90013DFC6 /* AppDelegate.m */; };
+		3C5CF483207185C90013DFC6 /* FinRotate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF481207185C90013DFC6 /* FinRotate.xcdatamodeld */; };
+		3C5CF485207185C90013DFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C5CF484207185C90013DFC6 /* Assets.xcassets */; };
+		3C5CF48B207185C90013DFC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF48A207185C90013DFC6 /* main.m */; };
+		3C5CF496207185CA0013DFC6 /* FinRotateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF495207185CA0013DFC6 /* FinRotateTests.m */; };
+		3C5CF4A1207185CA0013DFC6 /* FinRotateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF4A0207185CA0013DFC6 /* FinRotateUITests.m */; };
+		3C5CF4B02071865D0013DFC6 /* FinRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF4AF2071865C0013DFC6 /* FinRotate.m */; };
+		3CAC8AB82072B2AB00A56E64 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8AB72072B2AB00A56E64 /* MainMenu.xib */; };
+		3CB8758720744B1900621DE9 /* FinData5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8758620744B1900621DE9 /* FinData5.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C5CF492207185CA0013DFC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C5CF473207185C90013DFC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C5CF47A207185C90013DFC6;
+			remoteInfo = FinRotate;
+		};
+		3C5CF49D207185CA0013DFC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C5CF473207185C90013DFC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C5CF47A207185C90013DFC6;
+			remoteInfo = FinRotate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C5CF47B207185C90013DFC6 /* FinRotate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinRotate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C5CF47E207185C90013DFC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3C5CF47F207185C90013DFC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3C5CF482207185C90013DFC6 /* FinRotate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinRotate.xcdatamodel; sourceTree = "<group>"; };
+		3C5CF484207185C90013DFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C5CF489207185C90013DFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5CF48A207185C90013DFC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C5CF48C207185C90013DFC6 /* FinRotate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinRotate.entitlements; sourceTree = "<group>"; };
+		3C5CF491207185CA0013DFC6 /* FinRotateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinRotateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C5CF495207185CA0013DFC6 /* FinRotateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinRotateTests.m; sourceTree = "<group>"; };
+		3C5CF497207185CA0013DFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5CF49C207185CA0013DFC6 /* FinRotateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinRotateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C5CF4A0207185CA0013DFC6 /* FinRotateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinRotateUITests.m; sourceTree = "<group>"; };
+		3C5CF4A2207185CA0013DFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5CF4AE2071865C0013DFC6 /* FinRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinRotate.h; path = /Developer/FinRotateNew/FinRotate/FinRotate.h; sourceTree = "<absolute>"; };
+		3C5CF4AF2071865C0013DFC6 /* FinRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinRotate.m; sourceTree = "<group>"; };
+		3CAC8AB72072B2AB00A56E64 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		3CB8758620744B1900621DE9 /* FinData5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FinData5.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C5CF478207185C90013DFC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C5CF48E207185CA0013DFC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C5CF499207185CA0013DFC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C5CF472207185C90013DFC6 = {
+			isa = PBXGroup;
+			children = (
+				3C5CF47D207185C90013DFC6 /* FinRotate */,
+				3C5CF494207185CA0013DFC6 /* FinRotateTests */,
+				3C5CF49F207185CA0013DFC6 /* FinRotateUITests */,
+				3C5CF47C207185C90013DFC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C5CF47C207185C90013DFC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CF47B207185C90013DFC6 /* FinRotate.app */,
+				3C5CF491207185CA0013DFC6 /* FinRotateTests.xctest */,
+				3C5CF49C207185CA0013DFC6 /* FinRotateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C5CF47D207185C90013DFC6 /* FinRotate */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CF4AE2071865C0013DFC6 /* FinRotate.h */,
+				3CAC8AB72072B2AB00A56E64 /* MainMenu.xib */,
+				3C5CF4AF2071865C0013DFC6 /* FinRotate.m */,
+				3C5CF47E207185C90013DFC6 /* AppDelegate.h */,
+				3C5CF47F207185C90013DFC6 /* AppDelegate.m */,
+				3C5CF484207185C90013DFC6 /* Assets.xcassets */,
+				3C5CF489207185C90013DFC6 /* Info.plist */,
+				3C5CF48A207185C90013DFC6 /* main.m */,
+				3C5CF48C207185C90013DFC6 /* FinRotate.entitlements */,
+				3C5CF481207185C90013DFC6 /* FinRotate.xcdatamodeld */,
+				3CB8758620744B1900621DE9 /* FinData5.txt */,
+			);
+			path = FinRotate;
+			sourceTree = "<group>";
+		};
+		3C5CF494207185CA0013DFC6 /* FinRotateTests */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CF495207185CA0013DFC6 /* FinRotateTests.m */,
+				3C5CF497207185CA0013DFC6 /* Info.plist */,
+			);
+			path = FinRotateTests;
+			sourceTree = "<group>";
+		};
+		3C5CF49F207185CA0013DFC6 /* FinRotateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CF4A0207185CA0013DFC6 /* FinRotateUITests.m */,
+				3C5CF4A2207185CA0013DFC6 /* Info.plist */,
+			);
+			path = FinRotateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C5CF47A207185C90013DFC6 /* FinRotate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C5CF4A5207185CA0013DFC6 /* Build configuration list for PBXNativeTarget "FinRotate" */;
+			buildPhases = (
+				3C5CF477207185C90013DFC6 /* Sources */,
+				3C5CF478207185C90013DFC6 /* Frameworks */,
+				3C5CF479207185C90013DFC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinRotate;
+			productName = FinRotate;
+			productReference = 3C5CF47B207185C90013DFC6 /* FinRotate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C5CF490207185CA0013DFC6 /* FinRotateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C5CF4A8207185CA0013DFC6 /* Build configuration list for PBXNativeTarget "FinRotateTests" */;
+			buildPhases = (
+				3C5CF48D207185CA0013DFC6 /* Sources */,
+				3C5CF48E207185CA0013DFC6 /* Frameworks */,
+				3C5CF48F207185CA0013DFC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C5CF493207185CA0013DFC6 /* PBXTargetDependency */,
+			);
+			name = FinRotateTests;
+			productName = FinRotateTests;
+			productReference = 3C5CF491207185CA0013DFC6 /* FinRotateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3C5CF49B207185CA0013DFC6 /* FinRotateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C5CF4AB207185CA0013DFC6 /* Build configuration list for PBXNativeTarget "FinRotateUITests" */;
+			buildPhases = (
+				3C5CF498207185CA0013DFC6 /* Sources */,
+				3C5CF499207185CA0013DFC6 /* Frameworks */,
+				3C5CF49A207185CA0013DFC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C5CF49E207185CA0013DFC6 /* PBXTargetDependency */,
+			);
+			name = FinRotateUITests;
+			productName = FinRotateUITests;
+			productReference = 3C5CF49C207185CA0013DFC6 /* FinRotateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C5CF473207185C90013DFC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Mark Westneat";
+				TargetAttributes = {
+					3C5CF47A207185C90013DFC6 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					3C5CF490207185CA0013DFC6 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3C5CF47A207185C90013DFC6;
+					};
+					3C5CF49B207185CA0013DFC6 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3C5CF47A207185C90013DFC6;
+					};
+				};
+			};
+			buildConfigurationList = 3C5CF476207185C90013DFC6 /* Build configuration list for PBXProject "FinRotate" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C5CF472207185C90013DFC6;
+			productRefGroup = 3C5CF47C207185C90013DFC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C5CF47A207185C90013DFC6 /* FinRotate */,
+				3C5CF490207185CA0013DFC6 /* FinRotateTests */,
+				3C5CF49B207185CA0013DFC6 /* FinRotateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C5CF479207185C90013DFC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5CF485207185C90013DFC6 /* Assets.xcassets in Resources */,
+				3CAC8AB82072B2AB00A56E64 /* MainMenu.xib in Resources */,
+				3CB8758720744B1900621DE9 /* FinData5.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C5CF48F207185CA0013DFC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C5CF49A207185CA0013DFC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C5CF477207185C90013DFC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5CF483207185C90013DFC6 /* FinRotate.xcdatamodeld in Sources */,
+				3C5CF48B207185C90013DFC6 /* main.m in Sources */,
+				3C5CF4B02071865D0013DFC6 /* FinRotate.m in Sources */,
+				3C5CF480207185C90013DFC6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C5CF48D207185CA0013DFC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5CF496207185CA0013DFC6 /* FinRotateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C5CF498207185CA0013DFC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5CF4A1207185CA0013DFC6 /* FinRotateUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C5CF493207185CA0013DFC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C5CF47A207185C90013DFC6 /* FinRotate */;
+			targetProxy = 3C5CF492207185CA0013DFC6 /* PBXContainerItemProxy */;
+		};
+		3C5CF49E207185CA0013DFC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C5CF47A207185C90013DFC6 /* FinRotate */;
+			targetProxy = 3C5CF49D207185CA0013DFC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3C5CF4A3207185CA0013DFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3C5CF4A4207185CA0013DFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3C5CF4A6207185CA0013DFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FinRotate/FinRotate.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FinRotate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3C5CF4A7207185CA0013DFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FinRotate/FinRotate.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FinRotate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3C5CF4A9207185CA0013DFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FinRotateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinRotate.app/Contents/MacOS/FinRotate";
+			};
+			name = Debug;
+		};
+		3C5CF4AA207185CA0013DFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FinRotateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinRotate.app/Contents/MacOS/FinRotate";
+			};
+			name = Release;
+		};
+		3C5CF4AC207185CA0013DFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FinRotateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FinRotate;
+			};
+			name = Debug;
+		};
+		3C5CF4AD207185CA0013DFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FinRotateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FinRotate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C5CF476207185C90013DFC6 /* Build configuration list for PBXProject "FinRotate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5CF4A3207185CA0013DFC6 /* Debug */,
+				3C5CF4A4207185CA0013DFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C5CF4A5207185CA0013DFC6 /* Build configuration list for PBXNativeTarget "FinRotate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5CF4A6207185CA0013DFC6 /* Debug */,
+				3C5CF4A7207185CA0013DFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C5CF4A8207185CA0013DFC6 /* Build configuration list for PBXNativeTarget "FinRotateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5CF4A9207185CA0013DFC6 /* Debug */,
+				3C5CF4AA207185CA0013DFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C5CF4AB207185CA0013DFC6 /* Build configuration list for PBXNativeTarget "FinRotateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5CF4AC207185CA0013DFC6 /* Debug */,
+				3C5CF4AD207185CA0013DFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3C5CF481207185C90013DFC6 /* FinRotate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3C5CF482207185C90013DFC6 /* FinRotate.xcdatamodel */,
+			);
+			currentVersion = 3C5CF482207185C90013DFC6 /* FinRotate.xcdatamodel */;
+			path = FinRotate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3C5CF473207185C90013DFC6 /* Project object */;
+}
