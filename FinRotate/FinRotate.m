@@ -21,26 +21,54 @@
     scale = 350;
     scaledraw= 1;
     step=2;
-    rotLE=11;
-    rot1=10;
-    rot2=9;
-    rot3=8;
-    rot4=7;
-    rot5=6;
-    rot6=5;
-    rot7=4;
-    rot8=3;
-    rot9=2;
-    rot10=1;
-    rotTE=1;
+    afin=0;
+    rotLE=0;
+    rotTE=0;
+    rot1=0;
+    rot2=0;
+    rot3=0;
+    rot4=0;
+    rot5=0;
+    rot6=0;
+    rot7=0;
+    rot8=0;
+    rot9=0;
+    rot10=0;
+    
 }
- 
-//---------------------------------------------------------------------------------
-- (IBAction)errorcheck:(id)sender
-{
- 
 
-    }
+- (IBAction)clearRotState:(id)sender
+{
+    [LEneg setState:NSOffState];
+    [R1neg setState:NSOffState];
+    [R2neg setState:NSOffState];
+    [R3neg setState:NSOffState];
+    [R4neg setState:NSOffState];
+    [R5neg setState:NSOffState];
+    [R6neg setState:NSOffState];
+    [R7neg setState:NSOffState];
+    [R8neg setState:NSOffState];
+    [R9neg setState:NSOffState];
+    [R10neg setState:NSOffState];
+    [TEneg setState:NSOffState];
+}
+
+- (IBAction)getRotState:(id)sender
+{
+    if (rotLE<0){[LEneg setState:NSOnState];}
+    if (rot1<0){[R1neg setState:NSOnState];}
+    if (rot2<0){[R2neg setState:NSOnState];}
+    if (rot3<0){[R3neg setState:NSOnState];}
+    if (rot4<0){[R4neg setState:NSOnState];}
+    if (rot5<0){[R5neg setState:NSOnState];}
+    if (rot6<0){[R6neg setState:NSOnState];}
+    if (rot7<0){[R7neg setState:NSOnState];}
+    if (rot8<0){[R8neg setState:NSOnState];}
+    if (rot9<0){[R9neg setState:NSOnState];}
+    if (rot10<0){[R10neg setState:NSOnState];}
+    if (rotTE<0){[TEneg setState:NSOnState];}
+}
+
 
 //---------------------------------------------------------------------------------
 - (IBAction)trianglecalc:(id)sender
@@ -72,7 +100,7 @@
 }
 
 //---------------------------------------------------------------------------------
-- (IBAction)processdata1:(id)sender
+- (IBAction)processdata:(id)sender
 {
     area1= fabs((x30*y31-y30*x31)+(x31*y1-y31*x1)+(x1*y2-y1*x2)+(x2*y3-y2*x3)+(x3*y4-y3*x4)+(x4*y5-y4*x5)+(x5*y6-y5*x6)+(x6*y33-y6*x33)+(x33*y7-y33*x7)+(x7*y30-y7*x30))/2;
     area2= fabs((x7*y8-y7*x8)+(x8*y29-y8*x29)+(x29*y30-y29*x30)+(x30*y7-y30*x7))/2;
@@ -86,14 +114,21 @@
     area10=fabs((x15*y16-y15*x16)+(x16*y21-y16*x21)+(x21*y22-y21*x22)+(x22*y15-y22*x15))/2;
     area11=fabs((x21*y32-y21*x32)+(x32*y20-y32*x20)+(x20*y19-y20*x19)+(x19*y18-y19*x18)+(x18*y17-y18*x17)+(x17*y34-y17*x34)+(x34*y16-y34*x16)+(x16*y21-y16*x21))/2;
     areatotal= area1+area2+area3+area4+area5+area6+area7+area8+area9+area10+area11;
+    
+    rarea1= fabs((rx30*ry31-ry30*rx31)+(rx31*ry1-ry31*rx1)+(rx1*ry2-ry1*rx2)+(rx2*ry3-ry2*rx3)+(rx3*ry4-ry3*rx4)+(rx4*ry5-ry4*rx5)+(rx5*ry6-ry5*rx6)+(rx6*ry33-ry6*rx33)+(rx33*ry7-ry33*rx7)+(rx7*ry30-ry7*rx30))/2;
+    rarea2= fabs((rx7*ry8-ry7*rx8)+(rx8*ry29-ry8*rx29)+(rx29*ry30-ry29*rx30)+(rx30*ry7-ry30*rx7))/2;
+    rarea3= fabs((rx8*ry9-ry8*rx9)+(rx9*ry28-ry9*rx28)+(rx28*ry29-ry28*rx29)+(rx29*ry8-ry29*rx8))/2;
+    rarea4= fabs((rx9*ry10-ry9*rx10)+(rx10*ry27-ry10*rx27)+(rx27*ry28-ry27*rx28)+(rx28*ry9-ry28*rx9))/2;
+    rarea5= fabs((rx10*ry11-ry10*rx11)+(rx11*ry26-ry11*rx26)+(rx26*ry27-ry26*rx27)+(rx27*ry10-ry27*rx10))/2;
+    rarea6= fabs((rx11*ry12-ry11*rx12)+(rx12*ry25-ry12*rx25)+(rx25*ry26-ry25*rx26)+(rx26*ry11-ry26*rx11))/2;
+    rarea7= fabs((rx12*ry13-ry12*rx13)+(rx13*ry24-ry13*rx24)+(rx24*ry25-ry24*rx25)+(rx25*ry12-ry25*rx12))/2;
+    rarea8= fabs((rx13*ry14-ry13*rx14)+(rx14*ry23-ry14*rx23)+(rx23*ry24-ry23*rx24)+(rx24*ry13-ry24*rx13))/2;
+    rarea9= fabs((rx14*ry15-ry14*rx15)+(rx15*ry22-ry15*rx22)+(rx22*ry23-ry22*rx23)+(rx23*ry14-ry23*rx14))/2;
+    rarea10=fabs((rx15*ry16-ry15*rx16)+(rx16*ry21-ry16*rx21)+(rx21*ry22-ry21*rx22)+(rx22*ry15-ry22*rx15))/2;
+    rarea11=fabs((rx21*ry32-ry21*rx32)+(rx32*ry20-ry32*rx20)+(rx20*ry19-ry20*rx19)+(rx19*ry18-ry19*rx18)+(rx18*ry17-ry18*rx17)+(rx17*ry34-ry17*rx34)+(rx34*ry16-ry34*rx16)+(rx16*ry21-ry16*rx21))/2;
+    rareatotal= rarea1+rarea2+rarea3+rarea4+rarea5+rarea6+rarea7+rarea8+rarea9+rarea10+rarea11;
  }
 
-//---------------------------------------------------------------------------------
-- (IBAction)InsertNewCoords:(id)sender
-{
-
-
-}
 
 //---------------------------------------------------------------------------------
 //Data To Screen
@@ -140,18 +175,18 @@
     
     [data39 setStringValue:[NSString stringWithFormat:@"%i",fishcount]];
     
-    [data40 setStringValue:[NSString stringWithFormat:@"%i",dx31]];
-    [data41 setStringValue:[NSString stringWithFormat:@"%i",dy31]];
-    [data42 setStringValue:[NSString stringWithFormat:@"%i",dx33]];
-    [data43 setStringValue:[NSString stringWithFormat:@"%i",dy33]];
-    [data44 setStringValue:[NSString stringWithFormat:@"%f",x31]];
-    [data45 setStringValue:[NSString stringWithFormat:@"%f",y31]];
-    [data46 setStringValue:[NSString stringWithFormat:@"%f",x33]];
-    [data47 setStringValue:[NSString stringWithFormat:@"%f",y33]];
-    [data48 setStringValue:[NSString stringWithFormat:@"%f",rx31]];
-    [data49 setStringValue:[NSString stringWithFormat:@"%f",ry31]];
-    [data50 setStringValue:[NSString stringWithFormat:@"%f",rx33]];
-    [data51 setStringValue:[NSString stringWithFormat:@"%f",ry33]];
+    [data40 setStringValue:[NSString stringWithFormat:@"%f",rareatotal]];
+    [data41 setStringValue:[NSString stringWithFormat:@"%f",rarea1]];
+    [data42 setStringValue:[NSString stringWithFormat:@"%f",rarea2]];
+    [data43 setStringValue:[NSString stringWithFormat:@"%f",rarea3]];
+    [data44 setStringValue:[NSString stringWithFormat:@"%f",rarea4]];
+    [data45 setStringValue:[NSString stringWithFormat:@"%f",rarea5]];
+    [data46 setStringValue:[NSString stringWithFormat:@"%f",rarea6]];
+    [data47 setStringValue:[NSString stringWithFormat:@"%f",rarea7]];
+    [data48 setStringValue:[NSString stringWithFormat:@"%f",rarea8]];
+    [data49 setStringValue:[NSString stringWithFormat:@"%f",rarea9]];
+    [data50 setStringValue:[NSString stringWithFormat:@"%f",rarea10]];
+    [data51 setStringValue:[NSString stringWithFormat:@"%f",rarea11]];
 
     }
 //---------------------------------------------------------------------------------
@@ -211,6 +246,7 @@
     trailedge= d32to20+d20to19+d19to18+d18to17+d17to34;
 }
 
+/*
 //---------------------------------------Make x Coords positive for area calcs
 - (IBAction)xposCoords:(id)sender {
 x1= x1+step;
@@ -285,6 +321,7 @@ y32= y32+step;
 y33= y33+step;
 y34= y34+step;
 }
+ */
 
 //----------------------------------------------------------------
 - (IBAction)LeftRight:(id)sender {
@@ -437,7 +474,7 @@ y34= y34+step;
     y33= [[rowy objectAtIndex:33]doubleValue];
     y34= [[rowy objectAtIndex:34]doubleValue];
     
-    if (x31<0) {
+ /*   if (x31<0) {
         step=2;
         while (x31<0){ [self xposCoords:nil];}}
     if (x4<0) {
@@ -449,8 +486,42 @@ y34= y34+step;
         while (y31<0){ [self yposCoords:nil];}}
     if (y32<0) {
         step=2;
-        while (y32<0){ [self yposCoords:nil];}}
+        while (y32<0){ [self yposCoords:nil];}}   */
         
+}
+
+//------------------------------------------------------Saves user changes to rot values in arrays  rotarray:rowrot
+- (IBAction)setRot:(id)sender
+{
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:1 withObject:[NSNumber numberWithDouble:rotLE]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:2 withObject:[NSNumber numberWithDouble:rot1]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:3 withObject:[NSNumber numberWithDouble:rot2]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:4 withObject:[NSNumber numberWithDouble:rot3]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:5 withObject:[NSNumber numberWithDouble:rot4]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:6 withObject:[NSNumber numberWithDouble:rot5]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:7 withObject:[NSNumber numberWithDouble:rot6]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:8 withObject:[NSNumber numberWithDouble:rot7]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:9 withObject:[NSNumber numberWithDouble:rot8]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:10 withObject:[NSNumber numberWithDouble:rot9]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:11 withObject:[NSNumber numberWithDouble:rot10]];
+    [[rotarray objectAtIndex:i]replaceObjectAtIndex:12 withObject:[NSNumber numberWithDouble:rotTE]];
+}
+
+//-------------------------------------------------Retrieves user changes to rot values in arrays  rotarray:rowrot
+- (IBAction)getRot:(id)sender
+{
+    rotLE= [[[rotarray objectAtIndex:i]objectAtIndex:1]doubleValue]; //rotLE 1
+    rot1= [[[rotarray objectAtIndex:i]objectAtIndex:2]doubleValue];  //rot1 2
+    rot2= [[[rotarray objectAtIndex:i]objectAtIndex:3]doubleValue];   //rot2 3
+    rot3= [[[rotarray objectAtIndex:i]objectAtIndex:4]doubleValue];   //rot3 4
+    rot4= [[[rotarray objectAtIndex:i]objectAtIndex:5]doubleValue];   //rot4 5
+    rot5= [[[rotarray objectAtIndex:i]objectAtIndex:6]doubleValue];   //rot5 6
+    rot6= [[[rotarray objectAtIndex:i]objectAtIndex:7]doubleValue];   //rot6 7
+    rot7= [[[rotarray objectAtIndex:i]objectAtIndex:8]doubleValue];   //rot7 8
+    rot8= [[[rotarray objectAtIndex:i]objectAtIndex:9]doubleValue];   //rot8 9
+    rot9= [[[rotarray objectAtIndex:i]objectAtIndex:10]doubleValue];  //rot9 10
+    rot10= [[[rotarray objectAtIndex:i]objectAtIndex:11]doubleValue];   //rot10 11
+    rotTE= [[[rotarray objectAtIndex:i]objectAtIndex:12]doubleValue];   //rotTE 12
 }
 
 //----------------------------------------------------------------
@@ -531,83 +602,83 @@ y34= y34+step;
 - (IBAction) RotateFin:(id)sender {
     
     finslope= (x32-x31)/(y32-y31);
-    rot=1;
-    if (finslope>0) {rot= -1;}
-    if (finslope<0) {rot= 1;}
+    rotfin=1;
+    if (finslope>0) {rotfin= -1;}
+    if (finslope<0) {rotfin= 1;}
     sidea= finaxis;
     sideb= fabs(y32-y31);
     sidec= fabs(x32-x31);
     [self trianglecalc:nil];
     rotang= angac;
     
-    rx1= (x1*cos(rotang*con)) - (rot*y1*sin(rotang*con));
-    ry1= (y1*cos(rotang*con)) + (rot*x1*sin(rotang*con));
-    rx2= (x2*cos(rotang*con)) - (rot*y2*sin(rotang*con));
-    ry2= (y2*cos(rotang*con)) + (rot*x2*sin(rotang*con));
-    rx3= (x3*cos(rotang*con)) - (rot*y3*sin(rotang*con));
-    ry3= (y3*cos(rotang*con)) + (rot*x3*sin(rotang*con));
-    rx4= (x4*cos(rotang*con)) - (rot*y4*sin(rotang*con));
-    ry4= (y4*cos(rotang*con)) + (rot*x4*sin(rotang*con));
-    rx5= (x5*cos(rotang*con)) - (rot*y5*sin(rotang*con));
-    ry5= (y5*cos(rotang*con)) + (rot*x5*sin(rotang*con));
-    rx6= (x6*cos(rotang*con)) - (rot*y6*sin(rotang*con));
-    ry6= (y6*cos(rotang*con)) + (rot*x6*sin(rotang*con));
-    rx7= (x7*cos(rotang*con)) - (rot*y7*sin(rotang*con));
-    ry7= (y7*cos(rotang*con)) + (rot*x7*sin(rotang*con));
-    rx8= (x8*cos(rotang*con)) - (rot*y8*sin(rotang*con));
-    ry8= (y8*cos(rotang*con)) + (rot*x8*sin(rotang*con));
-    rx9= (x9*cos(rotang*con)) - (rot*y9*sin(rotang*con));
-    ry9= (y9*cos(rotang*con)) + (rot*x9*sin(rotang*con));
-    rx10= (x10*cos(rotang*con)) - (rot*y10*sin(rotang*con));
-    ry10= (y10*cos(rotang*con)) + (rot*x10*sin(rotang*con));
-    rx11= (x11*cos(rotang*con)) - (rot*y11*sin(rotang*con));
-    ry11= (y11*cos(rotang*con)) + (rot*x11*sin(rotang*con));
-    rx12= (x12*cos(rotang*con)) - (rot*y12*sin(rotang*con));
-    ry12= (y12*cos(rotang*con)) + (rot*x12*sin(rotang*con));
-    rx13= (x13*cos(rotang*con)) - (rot*y13*sin(rotang*con));
-    ry13= (y13*cos(rotang*con)) + (rot*x13*sin(rotang*con));
-    rx14= (x14*cos(rotang*con)) - (rot*y14*sin(rotang*con));
-    ry14= (y14*cos(rotang*con)) + (rot*x14*sin(rotang*con));
-    rx15= (x15*cos(rotang*con)) - (rot*y15*sin(rotang*con));
-    ry15= (y15*cos(rotang*con)) + (rot*x15*sin(rotang*con));
-    rx16= (x16*cos(rotang*con)) - (rot*y16*sin(rotang*con));
-    ry16= (y16*cos(rotang*con)) + (rot*x16*sin(rotang*con));
-    rx17= (x17*cos(rotang*con)) - (rot*y17*sin(rotang*con));
-    ry17= (y17*cos(rotang*con)) + (rot*x17*sin(rotang*con));
-    rx18= (x18*cos(rotang*con)) - (rot*y18*sin(rotang*con));
-    ry18= (y18*cos(rotang*con)) + (rot*x18*sin(rotang*con));
-    rx19= (x19*cos(rotang*con)) - (rot*y19*sin(rotang*con));
-    ry19= (y19*cos(rotang*con)) + (rot*x19*sin(rotang*con));
-    rx20= (x20*cos(rotang*con)) - (rot*y20*sin(rotang*con));
-    ry20= (y20*cos(rotang*con)) + (rot*x20*sin(rotang*con));
-    rx21= (x21*cos(rotang*con)) - (rot*y21*sin(rotang*con));
-    ry21= (y21*cos(rotang*con)) + (rot*x21*sin(rotang*con));
-    rx22= (x22*cos(rotang*con)) - (rot*y22*sin(rotang*con));
-    ry22= (y22*cos(rotang*con)) + (rot*x22*sin(rotang*con));
-    rx23= (x23*cos(rotang*con)) - (rot*y23*sin(rotang*con));
-    ry23= (y23*cos(rotang*con)) + (rot*x23*sin(rotang*con));
-    rx24= (x24*cos(rotang*con)) - (rot*y24*sin(rotang*con));
-    ry24= (y24*cos(rotang*con)) + (rot*x24*sin(rotang*con));
-    rx25= (x25*cos(rotang*con)) - (rot*y25*sin(rotang*con));
-    ry25= (y25*cos(rotang*con)) + (rot*x25*sin(rotang*con));
-    rx26= (x26*cos(rotang*con)) - (rot*y26*sin(rotang*con));
-    ry26= (y26*cos(rotang*con)) + (rot*x26*sin(rotang*con));
-    rx27= (x27*cos(rotang*con)) - (rot*y27*sin(rotang*con));
-    ry27= (y27*cos(rotang*con)) + (rot*x27*sin(rotang*con));
-    rx28= (x28*cos(rotang*con)) - (rot*y28*sin(rotang*con));
-    ry28= (y28*cos(rotang*con)) + (rot*x28*sin(rotang*con));
-    rx29= (x29*cos(rotang*con)) - (rot*y29*sin(rotang*con));
-    ry29= (y29*cos(rotang*con)) + (rot*x29*sin(rotang*con));
-    rx30= (x30*cos(rotang*con)) - (rot*y30*sin(rotang*con));
-    ry30= (y30*cos(rotang*con)) + (rot*x30*sin(rotang*con));
-    rx31= (x31*cos(rotang*con)) - (rot*y31*sin(rotang*con));
-    ry31= (y31*cos(rotang*con)) + (rot*x31*sin(rotang*con));
-    rx32= (x32*cos(rotang*con)) - (rot*y32*sin(rotang*con));
-    ry32= (y32*cos(rotang*con)) + (rot*x32*sin(rotang*con));
-    rx33= (x33*cos(rotang*con)) - (rot*y33*sin(rotang*con));
-    ry33= (y33*cos(rotang*con)) + (rot*x33*sin(rotang*con));
-    rx34= (x34*cos(rotang*con)) - (rot*y34*sin(rotang*con));
-    ry34= (y34*cos(rotang*con)) + (rot*x34*sin(rotang*con));
+    rx1= (x1*cos(rotang*con)) - (rotfin*y1*sin(rotang*con));
+    ry1= (y1*cos(rotang*con)) + (rotfin*x1*sin(rotang*con));
+    rx2= (x2*cos(rotang*con)) - (rotfin*y2*sin(rotang*con));
+    ry2= (y2*cos(rotang*con)) + (rotfin*x2*sin(rotang*con));
+    rx3= (x3*cos(rotang*con)) - (rotfin*y3*sin(rotang*con));
+    ry3= (y3*cos(rotang*con)) + (rotfin*x3*sin(rotang*con));
+    rx4= (x4*cos(rotang*con)) - (rotfin*y4*sin(rotang*con));
+    ry4= (y4*cos(rotang*con)) + (rotfin*x4*sin(rotang*con));
+    rx5= (x5*cos(rotang*con)) - (rotfin*y5*sin(rotang*con));
+    ry5= (y5*cos(rotang*con)) + (rotfin*x5*sin(rotang*con));
+    rx6= (x6*cos(rotang*con)) - (rotfin*y6*sin(rotang*con));
+    ry6= (y6*cos(rotang*con)) + (rotfin*x6*sin(rotang*con));
+    rx7= (x7*cos(rotang*con)) - (rotfin*y7*sin(rotang*con));
+    ry7= (y7*cos(rotang*con)) + (rotfin*x7*sin(rotang*con));
+    rx8= (x8*cos(rotang*con)) - (rotfin*y8*sin(rotang*con));
+    ry8= (y8*cos(rotang*con)) + (rotfin*x8*sin(rotang*con));
+    rx9= (x9*cos(rotang*con)) - (rotfin*y9*sin(rotang*con));
+    ry9= (y9*cos(rotang*con)) + (rotfin*x9*sin(rotang*con));
+    rx10= (x10*cos(rotang*con)) - (rotfin*y10*sin(rotang*con));
+    ry10= (y10*cos(rotang*con)) + (rotfin*x10*sin(rotang*con));
+    rx11= (x11*cos(rotang*con)) - (rotfin*y11*sin(rotang*con));
+    ry11= (y11*cos(rotang*con)) + (rotfin*x11*sin(rotang*con));
+    rx12= (x12*cos(rotang*con)) - (rotfin*y12*sin(rotang*con));
+    ry12= (y12*cos(rotang*con)) + (rotfin*x12*sin(rotang*con));
+    rx13= (x13*cos(rotang*con)) - (rotfin*y13*sin(rotang*con));
+    ry13= (y13*cos(rotang*con)) + (rotfin*x13*sin(rotang*con));
+    rx14= (x14*cos(rotang*con)) - (rotfin*y14*sin(rotang*con));
+    ry14= (y14*cos(rotang*con)) + (rotfin*x14*sin(rotang*con));
+    rx15= (x15*cos(rotang*con)) - (rotfin*y15*sin(rotang*con));
+    ry15= (y15*cos(rotang*con)) + (rotfin*x15*sin(rotang*con));
+    rx16= (x16*cos(rotang*con)) - (rotfin*y16*sin(rotang*con));
+    ry16= (y16*cos(rotang*con)) + (rotfin*x16*sin(rotang*con));
+    rx17= (x17*cos(rotang*con)) - (rotfin*y17*sin(rotang*con));
+    ry17= (y17*cos(rotang*con)) + (rotfin*x17*sin(rotang*con));
+    rx18= (x18*cos(rotang*con)) - (rotfin*y18*sin(rotang*con));
+    ry18= (y18*cos(rotang*con)) + (rotfin*x18*sin(rotang*con));
+    rx19= (x19*cos(rotang*con)) - (rotfin*y19*sin(rotang*con));
+    ry19= (y19*cos(rotang*con)) + (rotfin*x19*sin(rotang*con));
+    rx20= (x20*cos(rotang*con)) - (rotfin*y20*sin(rotang*con));
+    ry20= (y20*cos(rotang*con)) + (rotfin*x20*sin(rotang*con));
+    rx21= (x21*cos(rotang*con)) - (rotfin*y21*sin(rotang*con));
+    ry21= (y21*cos(rotang*con)) + (rotfin*x21*sin(rotang*con));
+    rx22= (x22*cos(rotang*con)) - (rotfin*y22*sin(rotang*con));
+    ry22= (y22*cos(rotang*con)) + (rotfin*x22*sin(rotang*con));
+    rx23= (x23*cos(rotang*con)) - (rotfin*y23*sin(rotang*con));
+    ry23= (y23*cos(rotang*con)) + (rotfin*x23*sin(rotang*con));
+    rx24= (x24*cos(rotang*con)) - (rotfin*y24*sin(rotang*con));
+    ry24= (y24*cos(rotang*con)) + (rotfin*x24*sin(rotang*con));
+    rx25= (x25*cos(rotang*con)) - (rotfin*y25*sin(rotang*con));
+    ry25= (y25*cos(rotang*con)) + (rotfin*x25*sin(rotang*con));
+    rx26= (x26*cos(rotang*con)) - (rotfin*y26*sin(rotang*con));
+    ry26= (y26*cos(rotang*con)) + (rotfin*x26*sin(rotang*con));
+    rx27= (x27*cos(rotang*con)) - (rotfin*y27*sin(rotang*con));
+    ry27= (y27*cos(rotang*con)) + (rotfin*x27*sin(rotang*con));
+    rx28= (x28*cos(rotang*con)) - (rotfin*y28*sin(rotang*con));
+    ry28= (y28*cos(rotang*con)) + (rotfin*x28*sin(rotang*con));
+    rx29= (x29*cos(rotang*con)) - (rotfin*y29*sin(rotang*con));
+    ry29= (y29*cos(rotang*con)) + (rotfin*x29*sin(rotang*con));
+    rx30= (x30*cos(rotang*con)) - (rotfin*y30*sin(rotang*con));
+    ry30= (y30*cos(rotang*con)) + (rotfin*x30*sin(rotang*con));
+    rx31= (x31*cos(rotang*con)) - (rotfin*y31*sin(rotang*con));
+    ry31= (y31*cos(rotang*con)) + (rotfin*x31*sin(rotang*con));
+    rx32= (x32*cos(rotang*con)) - (rotfin*y32*sin(rotang*con));
+    ry32= (y32*cos(rotang*con)) + (rotfin*x32*sin(rotang*con));
+    rx33= (x33*cos(rotang*con)) - (rotfin*y33*sin(rotang*con));
+    ry33= (y33*cos(rotang*con)) + (rotfin*x33*sin(rotang*con));
+    rx34= (x34*cos(rotang*con)) - (rotfin*y34*sin(rotang*con));
+    ry34= (y34*cos(rotang*con)) + (rotfin*x34*sin(rotang*con));
     mx1= rx1;
     mx2= rx2;
     mx3= rx3;
@@ -680,30 +751,30 @@ y34= y34+step;
      }
 //------------------------------------------------------------------
 - (IBAction) SpreadFin:(id)sender {
-    
-    rot=1;
-    //rot LE coords- rotate all and then move base back to original position of 31
-        finslope= (x33-x31)/(y33-y31);
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
-     if (rotLE>0){
+    rotray=1;  //default for dorsal fin
+    if (afin==1) {rotray= -1;}  //default rot other way for Afin
+     if (rotLE!=0){
+         if ([LEneg state] == NSOnState)
+            if (rotLE>0){rotLE=rotLE*-1;}
+         if ([LEneg state] == NSOffState)
+             if (rotLE<0){rotLE=rotLE*-1;}
         rotang=rotLE;
-        rx31= (x31*cos(rotang*con)) - (rot*y31*sin(rotang*con));
-        ry31= (y31*cos(rotang*con)) + (rot*x31*sin(rotang*con));
-        rx1= (x1*cos(rotang*con)) - (rot*y1*sin(rotang*con));
-        ry1= (y1*cos(rotang*con)) + (rot*x1*sin(rotang*con));
-        rx2= (x2*cos(rotang*con)) - (rot*y2*sin(rotang*con));
-        ry2= (y2*cos(rotang*con)) + (rot*x2*sin(rotang*con));
-        rx3= (x3*cos(rotang*con)) - (rot*y3*sin(rotang*con));
-        ry3= (y3*cos(rotang*con)) + (rot*x3*sin(rotang*con));
-        rx4= (x4*cos(rotang*con)) - (rot*y4*sin(rotang*con));
-        ry4= (y4*cos(rotang*con)) + (rot*x4*sin(rotang*con));
-        rx5= (x5*cos(rotang*con)) - (rot*y5*sin(rotang*con));
-        ry5= (y5*cos(rotang*con)) + (rot*x5*sin(rotang*con));
-        rx6= (x6*cos(rotang*con)) - (rot*y6*sin(rotang*con));
-        ry6= (y6*cos(rotang*con)) + (rot*x6*sin(rotang*con));
-        rx33= (x33*cos(rotang*con)) - (rot*y33*sin(rotang*con));
-        ry33= (y33*cos(rotang*con)) + (rot*x33*sin(rotang*con));
+        rx31= (x31*cos(rotang*con)) - (rotray*y31*sin(rotang*con));
+        ry31= (y31*cos(rotang*con)) + (rotray*x31*sin(rotang*con));
+        rx1= (x1*cos(rotang*con)) - (rotray*y1*sin(rotang*con));
+        ry1= (y1*cos(rotang*con)) + (rotray*x1*sin(rotang*con));
+        rx2= (x2*cos(rotang*con)) - (rotray*y2*sin(rotang*con));
+        ry2= (y2*cos(rotang*con)) + (rotray*x2*sin(rotang*con));
+        rx3= (x3*cos(rotang*con)) - (rotray*y3*sin(rotang*con));
+        ry3= (y3*cos(rotang*con)) + (rotray*x3*sin(rotang*con));
+        rx4= (x4*cos(rotang*con)) - (rotray*y4*sin(rotang*con));
+        ry4= (y4*cos(rotang*con)) + (rotray*x4*sin(rotang*con));
+        rx5= (x5*cos(rotang*con)) - (rotray*y5*sin(rotang*con));
+        ry5= (y5*cos(rotang*con)) + (rotray*x5*sin(rotang*con));
+        rx6= (x6*cos(rotang*con)) - (rotray*y6*sin(rotang*con));
+        ry6= (y6*cos(rotang*con)) + (rotray*x6*sin(rotang*con));
+        rx33= (x33*cos(rotang*con)) - (rotray*y33*sin(rotang*con));
+        ry33= (y33*cos(rotang*con)) + (rotray*x33*sin(rotang*con));
         xhop=rx31-x31;
         yhop=ry31-y31;
         rx31= rx31-xhop;
@@ -750,16 +821,16 @@ y34= y34+step;
         ry33= y33;}
     
 //rot FinRay1
-     if (rot1>0){
-         finslope= (x30-x7)/(y30-y7);
-         rot=1;
-         if (finslope>0) {rot= 1;}
-         if (finslope<0) {rot= -1;}
+     if (rot1!=0){
+         if ([R1neg state] == NSOnState)
+             if (rot1>0){rot1=rot1*-1;}
+         if ([R1neg state] == NSOffState)
+             if (rot1<0){rot1=rot1*-1;}
         rotang=rot1;
-        rx7= (x7*cos(rotang*con)) - (rot*y7*sin(rotang*con));
-        ry7= (y7*cos(rotang*con)) + (rot*x7*sin(rotang*con));
-        rx30= (x30*cos(rotang*con)) - (rot*y30*sin(rotang*con));
-        ry30= (y30*cos(rotang*con)) + (rot*x30*sin(rotang*con));
+        rx7= (x7*cos(rotang*con)) - (rotray*y7*sin(rotang*con));
+        ry7= (y7*cos(rotang*con)) + (rotray*x7*sin(rotang*con));
+        rx30= (x30*cos(rotang*con)) - (rotray*y30*sin(rotang*con));
+        ry30= (y30*cos(rotang*con)) + (rotray*x30*sin(rotang*con));
         xhop=rx30-x30;
         yhop=ry30-y30;
         rx7= rx7-xhop;
@@ -773,16 +844,16 @@ y34= y34+step;
          ry30= y30;}
     
 //rot FinRay2
-    if (rot2>0){
-        finslope= (x29-x8)/(y29-y8);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot2!=0){
+        if ([R2neg state] == NSOnState)
+            if (rot2>0){rot2=rot2*-1;}
+        if ([R2neg state] == NSOffState)
+            if (rot2<0){rot2=rot2*-1;}
         rotang=rot2;
-        rx8= (x8*cos(rotang*con)) - (rot*y8*sin(rotang*con));
-        ry8= (y8*cos(rotang*con)) + (rot*x8*sin(rotang*con));
-        rx29= (x29*cos(rotang*con)) - (rot*y29*sin(rotang*con));
-        ry29= (y29*cos(rotang*con)) + (rot*x29*sin(rotang*con));
+        rx8= (x8*cos(rotang*con)) - (rotray*y8*sin(rotang*con));
+        ry8= (y8*cos(rotang*con)) + (rotray*x8*sin(rotang*con));
+        rx29= (x29*cos(rotang*con)) - (rotray*y29*sin(rotang*con));
+        ry29= (y29*cos(rotang*con)) + (rotray*x29*sin(rotang*con));
         xhop=rx29-x29;
         yhop=ry29-y29;
         rx8= rx8-xhop;
@@ -796,16 +867,16 @@ y34= y34+step;
         ry29= y29;}
     
 //rot FinRay3
-    if (rot3>0){
-        finslope= (x28-x9)/(y28-y9);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot3!=0){
+        if ([R3neg state] == NSOnState)
+            if (rot3>0){rot3=rot3*-1;}
+        if ([R3neg state] == NSOffState)
+            if (rot3<0){rot3=rot3*-1;}
         rotang=rot3;
-        rx9= (x9*cos(rotang*con)) - (rot*y9*sin(rotang*con));
-        ry9= (y9*cos(rotang*con)) + (rot*x9*sin(rotang*con));
-        rx28= (x28*cos(rotang*con)) - (rot*y28*sin(rotang*con));
-        ry28= (y28*cos(rotang*con)) + (rot*x28*sin(rotang*con));
+        rx9= (x9*cos(rotang*con)) - (rotray*y9*sin(rotang*con));
+        ry9= (y9*cos(rotang*con)) + (rotray*x9*sin(rotang*con));
+        rx28= (x28*cos(rotang*con)) - (rotray*y28*sin(rotang*con));
+        ry28= (y28*cos(rotang*con)) + (rotray*x28*sin(rotang*con));
         xhop=rx28-x28;
         yhop=ry28-y28;
         rx9= rx9-xhop;
@@ -819,16 +890,16 @@ y34= y34+step;
         ry28= y28;}
     
 //rot FinRay4
-    if (rot4>0){
-        finslope= (x27-x10)/(y27-y10);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot4!=0){
+        if ([R4neg state] == NSOnState)
+            if (rot4>0){rot4=rot4*-1;}
+        if ([R4neg state] == NSOffState)
+            if (rot4<0){rot4=rot4*-1;}
         rotang=rot4;
-        rx10= (x10*cos(rotang*con)) - (rot*y10*sin(rotang*con));
-        ry10= (y10*cos(rotang*con)) + (rot*x10*sin(rotang*con));
-        rx27= (x27*cos(rotang*con)) - (rot*y27*sin(rotang*con));
-        ry27= (y27*cos(rotang*con)) + (rot*x27*sin(rotang*con));
+        rx10= (x10*cos(rotang*con)) - (rotray*y10*sin(rotang*con));
+        ry10= (y10*cos(rotang*con)) + (rotray*x10*sin(rotang*con));
+        rx27= (x27*cos(rotang*con)) - (rotray*y27*sin(rotang*con));
+        ry27= (y27*cos(rotang*con)) + (rotray*x27*sin(rotang*con));
         xhop=rx27-x27;
         yhop=ry27-y27;
         rx10= rx10-xhop;
@@ -842,16 +913,16 @@ y34= y34+step;
         ry27= y27;}
     
 //rot FinRay5
-    if (rot5>0){
-        finslope= (x26-x11)/(y26-y11);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot5!=0){
+        if ([R5neg state] == NSOnState)
+            if (rot5>0){rot5=rot5*-1;}
+        if ([R2neg state] == NSOffState)
+            if (rot5<0){rot5=rot5*-1;}
         rotang=rot5;
-        rx11= (x11*cos(rotang*con)) - (rot*y11*sin(rotang*con));
-        ry11= (y11*cos(rotang*con)) + (rot*x11*sin(rotang*con));
-        rx26= (x26*cos(rotang*con)) - (rot*y26*sin(rotang*con));
-        ry26= (y26*cos(rotang*con)) + (rot*x26*sin(rotang*con));
+        rx11= (x11*cos(rotang*con)) - (rotray*y11*sin(rotang*con));
+        ry11= (y11*cos(rotang*con)) + (rotray*x11*sin(rotang*con));
+        rx26= (x26*cos(rotang*con)) - (rotray*y26*sin(rotang*con));
+        ry26= (y26*cos(rotang*con)) + (rotray*x26*sin(rotang*con));
         xhop=rx26-x26;
         yhop=ry26-y26;
         rx11= rx11-xhop;
@@ -865,16 +936,16 @@ y34= y34+step;
         ry26= y26;}
     
 //rot FinRay6
-    if (rot6>0){
-        finslope= (x25-x12)/(y25-y12);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot6!=0){
+        if ([R6neg state] == NSOnState)
+            if (rot6>0){rot6=rot6*-1;}
+        if ([R6neg state] == NSOffState)
+            if (rot6<0){rot6=rot6*-1;}
         rotang=rot6;
-        rx12= (x12*cos(rotang*con)) - (rot*y12*sin(rotang*con));
-        ry12= (y12*cos(rotang*con)) + (rot*x12*sin(rotang*con));
-        rx25= (x25*cos(rotang*con)) - (rot*y25*sin(rotang*con));
-        ry25= (y25*cos(rotang*con)) + (rot*x25*sin(rotang*con));
+        rx12= (x12*cos(rotang*con)) - (rotray*y12*sin(rotang*con));
+        ry12= (y12*cos(rotang*con)) + (rotray*x12*sin(rotang*con));
+        rx25= (x25*cos(rotang*con)) - (rotray*y25*sin(rotang*con));
+        ry25= (y25*cos(rotang*con)) + (rotray*x25*sin(rotang*con));
         xhop=rx25-x25;
         yhop=ry25-y25;
         rx12= rx12-xhop;
@@ -888,16 +959,16 @@ y34= y34+step;
         ry25= y25;}
     
     //rot FinRay7
-    if (rot7>0){
-        finslope= (x24-x13)/(y24-y13);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot7!=0){
+        if ([R7neg state] == NSOnState)
+            if (rot7>0){rot7=rot7*-1;}
+        if ([R7neg state] == NSOffState)
+            if (rot7<0){rot7=rot7*-1;}
         rotang=rot7;
-        rx13= (x13*cos(rotang*con)) - (rot*y13*sin(rotang*con));
-        ry13= (y13*cos(rotang*con)) + (rot*x13*sin(rotang*con));
-        rx24= (x24*cos(rotang*con)) - (rot*y24*sin(rotang*con));
-        ry24= (y24*cos(rotang*con)) + (rot*x24*sin(rotang*con));
+        rx13= (x13*cos(rotang*con)) - (rotray*y13*sin(rotang*con));
+        ry13= (y13*cos(rotang*con)) + (rotray*x13*sin(rotang*con));
+        rx24= (x24*cos(rotang*con)) - (rotray*y24*sin(rotang*con));
+        ry24= (y24*cos(rotang*con)) + (rotray*x24*sin(rotang*con));
         xhop=rx24-x24;
         yhop=ry24-y24;
         rx13= rx13-xhop;
@@ -911,16 +982,16 @@ y34= y34+step;
         ry24= y24;}
     
 //rot FinRay8
-    if (rot8>0){
-        finslope= (x23-x14)/(y23-y14);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot8!=0){
+        if ([R8neg state] == NSOnState)
+            if (rot8>0){rot8=rot8*-1;}
+        if ([R8neg state] == NSOffState)
+            if (rot8<0){rot8=rot8*-1;}
         rotang=rot8;
-        rx14= (x14*cos(rotang*con)) - (rot*y14*sin(rotang*con));
-        ry14= (y14*cos(rotang*con)) + (rot*x14*sin(rotang*con));
-        rx23= (x23*cos(rotang*con)) - (rot*y23*sin(rotang*con));
-        ry23= (y23*cos(rotang*con)) + (rot*x23*sin(rotang*con));
+        rx14= (x14*cos(rotang*con)) - (rotray*y14*sin(rotang*con));
+        ry14= (y14*cos(rotang*con)) + (rotray*x14*sin(rotang*con));
+        rx23= (x23*cos(rotang*con)) - (rotray*y23*sin(rotang*con));
+        ry23= (y23*cos(rotang*con)) + (rotray*x23*sin(rotang*con));
         xhop=rx23-x23;
         yhop=ry23-y23;
         rx14= rx14-xhop;
@@ -934,16 +1005,16 @@ y34= y34+step;
         ry23= y23;}
     
 //rot FinRay9
-    if (rot9>0){
-        finslope= (x22-x15)/(y22-y15);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot9!=0){
+        if ([R9neg state] == NSOnState)
+            if (rot9>0){rot9=rot9*-1;}
+        if ([R9neg state] == NSOffState)
+            if (rot9<0){rot9=rot9*-1;}
         rotang=rot9;
-        rx15= (x15*cos(rotang*con)) - (rot*y15*sin(rotang*con));
-        ry15= (y15*cos(rotang*con)) + (rot*x15*sin(rotang*con));
-        rx22= (x22*cos(rotang*con)) - (rot*y22*sin(rotang*con));
-        ry22= (y22*cos(rotang*con)) + (rot*x22*sin(rotang*con));
+        rx15= (x15*cos(rotang*con)) - (rotray*y15*sin(rotang*con));
+        ry15= (y15*cos(rotang*con)) + (rotray*x15*sin(rotang*con));
+        rx22= (x22*cos(rotang*con)) - (rotray*y22*sin(rotang*con));
+        ry22= (y22*cos(rotang*con)) + (rotray*x22*sin(rotang*con));
         xhop=rx22-x22;
         yhop=ry22-y22;
         rx15= rx15-xhop;
@@ -957,16 +1028,16 @@ y34= y34+step;
         ry22= y22;}
     
 //rot FinRay10
-    if (rot10>0){
-        finslope= (x21-x16)/(y21-y16);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rot10!=0){
+        if ([R10neg state] == NSOnState)
+            if (rot10>0){rot10=rot10*-1;}
+        if ([R10neg state] == NSOffState)
+            if (rot10<0){rot10=rot10*-1;}
         rotang=rot10;
-        rx16= (x16*cos(rotang*con)) - (rot*y16*sin(rotang*con));
-        ry16= (y16*cos(rotang*con)) + (rot*x16*sin(rotang*con));
-        rx21= (x21*cos(rotang*con)) - (rot*y21*sin(rotang*con));
-        ry21= (y21*cos(rotang*con)) + (rot*x21*sin(rotang*con));
+        rx16= (x16*cos(rotang*con)) - (rotray*y16*sin(rotang*con));
+        ry16= (y16*cos(rotang*con)) + (rotray*x16*sin(rotang*con));
+        rx21= (x21*cos(rotang*con)) - (rotray*y21*sin(rotang*con));
+        ry21= (y21*cos(rotang*con)) + (rotray*x21*sin(rotang*con));
         xhop=rx21-x21;
         yhop=ry21-y21;
         rx16= rx16-xhop;
@@ -980,24 +1051,24 @@ y34= y34+step;
         ry21= y21;}
     
     //rot TE
-    if (rotTE>0){
-        finslope= (x32-x34)/(y32-y34);
-        rot=1;
-        if (finslope>0) {rot= 1;}
-        if (finslope<0) {rot= -1;}
+    if (rotTE!=0){
+        if ([TEneg state] == NSOnState)
+            if (rotTE>0){rotTE=rotTE*-1;}
+        if ([TEneg state] == NSOffState)
+            if (rotTE<0){rotTE=rotTE*-1;}
         rotang=rotTE;
-        rx32= (x32*cos(rotang*con)) - (rot*y32*sin(rotang*con));
-        ry32= (y32*cos(rotang*con)) + (rot*x32*sin(rotang*con));
-        rx17= (x17*cos(rotang*con)) - (rot*y17*sin(rotang*con));
-        ry17= (y17*cos(rotang*con)) + (rot*x17*sin(rotang*con));
-        rx18= (x18*cos(rotang*con)) - (rot*y18*sin(rotang*con));
-        ry18= (y18*cos(rotang*con)) + (rot*x18*sin(rotang*con));
-        rx19= (x19*cos(rotang*con)) - (rot*y19*sin(rotang*con));
-        ry19= (y19*cos(rotang*con)) + (rot*x19*sin(rotang*con));
-        rx20= (x20*cos(rotang*con)) - (rot*y20*sin(rotang*con));
-        ry20= (y20*cos(rotang*con)) + (rot*x20*sin(rotang*con));
-        rx34= (x34*cos(rotang*con)) - (rot*y34*sin(rotang*con));
-        ry34= (y34*cos(rotang*con)) + (rot*x34*sin(rotang*con));
+        rx32= (x32*cos(rotang*con)) - (rotray*y32*sin(rotang*con));
+        ry32= (y32*cos(rotang*con)) + (rotray*x32*sin(rotang*con));
+        rx17= (x17*cos(rotang*con)) - (rotray*y17*sin(rotang*con));
+        ry17= (y17*cos(rotang*con)) + (rotray*x17*sin(rotang*con));
+        rx18= (x18*cos(rotang*con)) - (rotray*y18*sin(rotang*con));
+        ry18= (y18*cos(rotang*con)) + (rotray*x18*sin(rotang*con));
+        rx19= (x19*cos(rotang*con)) - (rotray*y19*sin(rotang*con));
+        ry19= (y19*cos(rotang*con)) + (rotray*x19*sin(rotang*con));
+        rx20= (x20*cos(rotang*con)) - (rotray*y20*sin(rotang*con));
+        ry20= (y20*cos(rotang*con)) + (rotray*x20*sin(rotang*con));
+        rx34= (x34*cos(rotang*con)) - (rotray*y34*sin(rotang*con));
+        ry34= (y34*cos(rotang*con)) + (rotray*x34*sin(rotang*con));
         xhop=rx32-x32;
         yhop=ry32-y32;
         rx17= rx17-xhop;
@@ -1095,7 +1166,6 @@ y34= y34+step;
     my32= ry32;
     my33= ry33;
     my34= ry34;
-       
     }
 //----------------------------------------------------------------
 - (IBAction) scaleUpDraw:(id)sender {
@@ -1318,7 +1388,7 @@ y34= y34+step;
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
     
     //Points in Blue
-   
+    CGContextSetRGBStrokeColor(context, 0, 0, 255, 1);//blue
     CGContextStrokeEllipseInRect(context, CGRectMake(NSPointToCGPoint(pt[1]).x, NSPointToCGPoint (pt[1]).y, 3, 3));
     CGContextStrokeEllipseInRect(context, CGRectMake(NSPointToCGPoint(pt[2]).x, NSPointToCGPoint (pt[2]).y, 3, 3));
     CGContextStrokeEllipseInRect(context, CGRectMake(NSPointToCGPoint(pt[3]).x, NSPointToCGPoint (pt[3]).y, 3, 3));
@@ -1354,9 +1424,10 @@ y34= y34+step;
     CGContextStrokeEllipseInRect(context, CGRectMake(NSPointToCGPoint(pt[33]).x, NSPointToCGPoint (pt[33]).y, 3, 3));
     CGContextStrokeEllipseInRect(context, CGRectMake(NSPointToCGPoint(pt[34]).x, NSPointToCGPoint (pt[34]).y, 3, 3));
     CGContextSetLineWidth(context, 1.0);
-    CGContextSetRGBStrokeColor(context, 0, 0, 255, 1);//blue
     CGContextStrokePath(context);
     
+    //lines in black
+     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0); //Black
 	//Leading Edge
     CGContextMoveToPoint(context,NSPointToCGPoint(pt[31]).x, NSPointToCGPoint (pt[31]).y);
     CGContextAddLineToPoint(context,NSPointToCGPoint(pt[1]).x, NSPointToCGPoint (pt[1]).y);
@@ -1418,15 +1489,13 @@ y34= y34+step;
     CGContextAddLineToPoint(context,NSPointToCGPoint(pt[15]).x, NSPointToCGPoint (pt[15]).y);
     CGContextMoveToPoint(context,NSPointToCGPoint(pt[21]).x, NSPointToCGPoint (pt[21]).y);
     CGContextAddLineToPoint(context,NSPointToCGPoint(pt[16]).x, NSPointToCGPoint (pt[16]).y);
-
     CGContextStrokePath(context);
-    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0); //Black
-    
-    //FinAxis
+   
+    //FinAxis in Red
+    CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0); //Red
     CGContextMoveToPoint(context,NSPointToCGPoint(pt[32]).x, NSPointToCGPoint (pt[32]).y);
     CGContextAddLineToPoint(context,NSPointToCGPoint(pt[31]).x, NSPointToCGPoint (pt[31]).y);
     CGContextSetLineWidth(context, 1.0);
-    CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0); //Red
     CGContextStrokePath(context);
 }
 
@@ -1434,12 +1503,14 @@ y34= y34+step;
 //---------------------------------------------------------------------------------
 - (IBAction)nextFin:(id)sender {
     if (i<fishcount){
+        [self setRot:nil]; //store new rots before moving
         i=i+1; 
         [self CoordsFromArray:nil];
-        //[self scaleCoords:nil];
         [self calclinks:nil];
-        //[self errorcheck:nil];
-        [self processdata1:nil];
+        [self clearRotState:nil];  //set all rots to pos
+        [self getRot:nil];  //get previously stored rots
+        [self getRotState:nil];  //get previously stored rot states if neg
+        [self processdata:nil];
         [self setDrawCoords:nil];
         [self scaleDrawCoords:nil];
         [self datatoscreen:nil];
@@ -1448,12 +1519,14 @@ y34= y34+step;
 //---------------------------------------------------------------------------------
 - (IBAction)prevFin:(id)sender {
     if (i>1){
+        [self setRot:nil]; //store new rots before moving
         i=i-1; 
         [self CoordsFromArray:nil];
-       // [self scaleCoords:nil];
         [self calclinks:nil];
-        //[self errorcheck:nil];
-        [self processdata1:nil];
+        [self clearRotState:nil];  //set all rots to pos
+        [self getRot:nil];  //get previously stored rots
+        [self getRotState:nil];  //get previously stored rot states if neg
+        [self processdata:nil];
         [self setDrawCoords:nil];
         [self scaleDrawCoords:nil];
         [self datatoscreen:nil];
@@ -1504,6 +1577,7 @@ y34= y34+step;
 //---------------------------------------------------------------------------------
 // Open File, read in data, and calc everything
 - (IBAction)doOpen:(id)sender {
+    [self initvars:nil];
     NSString *spec, *errspec;
     NSOpenPanel *theOpenPanel = [NSOpenPanel openPanel];
     [theOpenPanel setTitle:@"Choose a Coordinate File to Open"];
@@ -1515,17 +1589,24 @@ y34= y34+step;
         i=0;
         NSScanner *scanner = [NSScanner scannerWithString:s];
         NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-        specarray = [[NSMutableArray alloc] init];
+        specarray = [[NSMutableArray alloc] init];  // stores species or specimen names
         [specarray insertObject:@"zero" atIndex:0];  //position zero not used
         
         fishx = [[NSMutableArray alloc] init];
         [fishx insertObject: [NSMutableArray array] atIndex:0];//adds x array at position 0, not used
+        rowx= [fishx objectAtIndex: 0];
+        [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
+        
         fishy = [[NSMutableArray alloc] init];
         [fishy insertObject: [NSMutableArray array] atIndex:0];//adds y array at position 0, not used
-        rowx= [fishx objectAtIndex: 0];          
-        [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
-        rowy= [fishy objectAtIndex: 0];         
+        rowy= [fishy objectAtIndex: 0];
         [rowy insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds y val at position 0, not used
+        
+        rotarray = [[NSMutableArray alloc] init];   // stores fin ray rotations
+        [rotarray insertObject: [NSMutableArray array] atIndex:0];//adds array within array at position 0, not used
+        rowrot= [rotarray objectAtIndex: 0];
+        [rowrot insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds rot val at position 0, not used
+        
         while ([scanner isAtEnd] == NO) {
             fishok = 0;
             i= i+1;
@@ -1535,77 +1616,94 @@ y34= y34+step;
             rowy= [fishy objectAtIndex: i];         //adds y row at position i
             [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
             [rowy insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds y val at position 0, not used
+
             [scanner scanUpToCharactersFromSet:whiteSpace intoString:&spec];//gets specimen name at start of line
             [specarray insertObject:spec atIndex:i];  //store specimen name
-            [scanner scanDouble:&x1]; [rowx addObject:[NSNumber numberWithDouble:x1]];  //first half of each line is X coords
+            [scanner scanDouble:&x1]; [rowx addObject:[NSNumber numberWithDouble:x1]];  //alternate X-Y coords
+            [scanner scanDouble:&y1]; [rowy addObject:[NSNumber numberWithDouble:y1]];
             [scanner scanDouble:&x2]; [rowx addObject:[NSNumber numberWithDouble:x2]];
-            [scanner scanDouble:&x3]; [rowx addObject:[NSNumber numberWithDouble:x3]];
-            [scanner scanDouble:&x4]; [rowx addObject:[NSNumber numberWithDouble:x4]];
-            [scanner scanDouble:&x5]; [rowx addObject:[NSNumber numberWithDouble:x5]];
-            [scanner scanDouble:&x6]; [rowx addObject:[NSNumber numberWithDouble:x6]];
-            [scanner scanDouble:&x7]; [rowx addObject:[NSNumber numberWithDouble:x7]];
-            [scanner scanDouble:&x8]; [rowx addObject:[NSNumber numberWithDouble:x8]];
-            [scanner scanDouble:&x9]; [rowx addObject:[NSNumber numberWithDouble:x9]];
-            [scanner scanDouble:&x10]; [rowx addObject:[NSNumber numberWithDouble:x10]];
-            [scanner scanDouble:&x11]; [rowx addObject:[NSNumber numberWithDouble:x11]];
-            [scanner scanDouble:&x12]; [rowx addObject:[NSNumber numberWithDouble:x12]];
-            [scanner scanDouble:&x13]; [rowx addObject:[NSNumber numberWithDouble:x13]];
-            [scanner scanDouble:&x14]; [rowx addObject:[NSNumber numberWithDouble:x14]];
-            [scanner scanDouble:&x15]; [rowx addObject:[NSNumber numberWithDouble:x15]];
-            [scanner scanDouble:&x16]; [rowx addObject:[NSNumber numberWithDouble:x16]];
-            [scanner scanDouble:&x17]; [rowx addObject:[NSNumber numberWithDouble:x17]];
-            [scanner scanDouble:&x18]; [rowx addObject:[NSNumber numberWithDouble:x18]];
-            [scanner scanDouble:&x19]; [rowx addObject:[NSNumber numberWithDouble:x19]];
-            [scanner scanDouble:&x20]; [rowx addObject:[NSNumber numberWithDouble:x20]];
-            [scanner scanDouble:&x21]; [rowx addObject:[NSNumber numberWithDouble:x21]];
-            [scanner scanDouble:&x22]; [rowx addObject:[NSNumber numberWithDouble:x22]];
-            [scanner scanDouble:&x23]; [rowx addObject:[NSNumber numberWithDouble:x23]];
-            [scanner scanDouble:&x24]; [rowx addObject:[NSNumber numberWithDouble:x24]];
-            [scanner scanDouble:&x25]; [rowx addObject:[NSNumber numberWithDouble:x25]];
-            [scanner scanDouble:&x26]; [rowx addObject:[NSNumber numberWithDouble:x26]];
-            [scanner scanDouble:&x27]; [rowx addObject:[NSNumber numberWithDouble:x27]];
-            [scanner scanDouble:&x28]; [rowx addObject:[NSNumber numberWithDouble:x28]];
-            [scanner scanDouble:&x29]; [rowx addObject:[NSNumber numberWithDouble:x29]];
-            [scanner scanDouble:&x30]; [rowx addObject:[NSNumber numberWithDouble:x30]];
-            [scanner scanDouble:&x31]; [rowx addObject:[NSNumber numberWithDouble:x31]];
-            [scanner scanDouble:&x32]; [rowx addObject:[NSNumber numberWithDouble:x32]];
-            [scanner scanDouble:&x33]; [rowx addObject:[NSNumber numberWithDouble:x33]];
-            [scanner scanDouble:&x34]; [rowx addObject:[NSNumber numberWithDouble:x34]];
-            
-            [scanner scanDouble:&y1]; [rowy addObject:[NSNumber numberWithDouble:y1]]; //2nd half of each line is Y coords
             [scanner scanDouble:&y2]; [rowy addObject:[NSNumber numberWithDouble:y2]];
+            [scanner scanDouble:&x3]; [rowx addObject:[NSNumber numberWithDouble:x3]];
             [scanner scanDouble:&y3]; [rowy addObject:[NSNumber numberWithDouble:y3]];
+            [scanner scanDouble:&x4]; [rowx addObject:[NSNumber numberWithDouble:x4]];
             [scanner scanDouble:&y4]; [rowy addObject:[NSNumber numberWithDouble:y4]];
+            [scanner scanDouble:&x5]; [rowx addObject:[NSNumber numberWithDouble:x5]];
             [scanner scanDouble:&y5]; [rowy addObject:[NSNumber numberWithDouble:y5]];
+            [scanner scanDouble:&x6]; [rowx addObject:[NSNumber numberWithDouble:x6]];
             [scanner scanDouble:&y6]; [rowy addObject:[NSNumber numberWithDouble:y6]];
+            [scanner scanDouble:&x7]; [rowx addObject:[NSNumber numberWithDouble:x7]];
             [scanner scanDouble:&y7]; [rowy addObject:[NSNumber numberWithDouble:y7]];
+            [scanner scanDouble:&x8]; [rowx addObject:[NSNumber numberWithDouble:x8]];
             [scanner scanDouble:&y8]; [rowy addObject:[NSNumber numberWithDouble:y8]];
+            [scanner scanDouble:&x9]; [rowx addObject:[NSNumber numberWithDouble:x9]];
             [scanner scanDouble:&y9]; [rowy addObject:[NSNumber numberWithDouble:y9]];
+            [scanner scanDouble:&x10]; [rowx addObject:[NSNumber numberWithDouble:x10]];
             [scanner scanDouble:&y10]; [rowy addObject:[NSNumber numberWithDouble:y10]];
+            [scanner scanDouble:&x11]; [rowx addObject:[NSNumber numberWithDouble:x11]];
             [scanner scanDouble:&y11]; [rowy addObject:[NSNumber numberWithDouble:y11]];
+            [scanner scanDouble:&x12]; [rowx addObject:[NSNumber numberWithDouble:x12]];
             [scanner scanDouble:&y12]; [rowy addObject:[NSNumber numberWithDouble:y12]];
+            [scanner scanDouble:&x13]; [rowx addObject:[NSNumber numberWithDouble:x13]];
             [scanner scanDouble:&y13]; [rowy addObject:[NSNumber numberWithDouble:y13]];
+            [scanner scanDouble:&x14]; [rowx addObject:[NSNumber numberWithDouble:x14]];
             [scanner scanDouble:&y14]; [rowy addObject:[NSNumber numberWithDouble:y14]];
+            [scanner scanDouble:&x15]; [rowx addObject:[NSNumber numberWithDouble:x15]];
             [scanner scanDouble:&y15]; [rowy addObject:[NSNumber numberWithDouble:y15]];
+            [scanner scanDouble:&x16]; [rowx addObject:[NSNumber numberWithDouble:x16]];
             [scanner scanDouble:&y16]; [rowy addObject:[NSNumber numberWithDouble:y16]];
+            [scanner scanDouble:&x17]; [rowx addObject:[NSNumber numberWithDouble:x17]];
             [scanner scanDouble:&y17]; [rowy addObject:[NSNumber numberWithDouble:y17]];
+            [scanner scanDouble:&x18]; [rowx addObject:[NSNumber numberWithDouble:x18]];
             [scanner scanDouble:&y18]; [rowy addObject:[NSNumber numberWithDouble:y18]];
+            [scanner scanDouble:&x19]; [rowx addObject:[NSNumber numberWithDouble:x19]];
             [scanner scanDouble:&y19]; [rowy addObject:[NSNumber numberWithDouble:y19]];
+            [scanner scanDouble:&x20]; [rowx addObject:[NSNumber numberWithDouble:x20]];
             [scanner scanDouble:&y20]; [rowy addObject:[NSNumber numberWithDouble:y20]];
+            [scanner scanDouble:&x21]; [rowx addObject:[NSNumber numberWithDouble:x21]];
             [scanner scanDouble:&y21]; [rowy addObject:[NSNumber numberWithDouble:y21]];
+            [scanner scanDouble:&x22]; [rowx addObject:[NSNumber numberWithDouble:x22]];
             [scanner scanDouble:&y22]; [rowy addObject:[NSNumber numberWithDouble:y22]];
+            [scanner scanDouble:&x23]; [rowx addObject:[NSNumber numberWithDouble:x23]];
             [scanner scanDouble:&y23]; [rowy addObject:[NSNumber numberWithDouble:y23]];
+            [scanner scanDouble:&x24]; [rowx addObject:[NSNumber numberWithDouble:x24]];
             [scanner scanDouble:&y24]; [rowy addObject:[NSNumber numberWithDouble:y24]];
+            [scanner scanDouble:&x25]; [rowx addObject:[NSNumber numberWithDouble:x25]];
             [scanner scanDouble:&y25]; [rowy addObject:[NSNumber numberWithDouble:y25]];
+            [scanner scanDouble:&x26]; [rowx addObject:[NSNumber numberWithDouble:x26]];
             [scanner scanDouble:&y26]; [rowy addObject:[NSNumber numberWithDouble:y26]];
+            [scanner scanDouble:&x27]; [rowx addObject:[NSNumber numberWithDouble:x27]];
             [scanner scanDouble:&y27]; [rowy addObject:[NSNumber numberWithDouble:y27]];
+            [scanner scanDouble:&x28]; [rowx addObject:[NSNumber numberWithDouble:x28]];
             [scanner scanDouble:&y28]; [rowy addObject:[NSNumber numberWithDouble:y28]];
+            [scanner scanDouble:&x29]; [rowx addObject:[NSNumber numberWithDouble:x29]];
             [scanner scanDouble:&y29]; [rowy addObject:[NSNumber numberWithDouble:y29]];
+            [scanner scanDouble:&x30]; [rowx addObject:[NSNumber numberWithDouble:x30]];
             [scanner scanDouble:&y30]; [rowy addObject:[NSNumber numberWithDouble:y30]];
+            [scanner scanDouble:&x31]; [rowx addObject:[NSNumber numberWithDouble:x31]];
             [scanner scanDouble:&y31]; [rowy addObject:[NSNumber numberWithDouble:y31]];
+            [scanner scanDouble:&x32]; [rowx addObject:[NSNumber numberWithDouble:x32]];
             [scanner scanDouble:&y32]; [rowy addObject:[NSNumber numberWithDouble:y32]];
+            [scanner scanDouble:&x33]; [rowx addObject:[NSNumber numberWithDouble:x33]];
             [scanner scanDouble:&y33]; [rowy addObject:[NSNumber numberWithDouble:y33]];
+            [scanner scanDouble:&x34]; [rowx addObject:[NSNumber numberWithDouble:x34]];
             [scanner scanDouble:&y34]; [rowy addObject:[NSNumber numberWithDouble:y34]];
+            
+            [rotarray insertObject: [NSMutableArray array] atIndex:i];
+            rowrot= [rotarray objectAtIndex: i];
+            [rowrot insertObject: [NSNumber numberWithDouble:0] atIndex:0];
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rotLE 1
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot1 2
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot2 3
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot3 4
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot4 5
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot5 6
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot6 7
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot7 8
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot8 9
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot9 10
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot10 11
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rotTE 12
+            
            
             if (y34==0) {fishok = 1;}
             if (fishok==1) {
@@ -1621,12 +1719,10 @@ y34= y34+step;
         } //end if scanner is at end
         
         i=1;
-        [self initvars:nil];
+        afin=0;
         [self CoordsFromArray:nil];
-        //[self scaleCoords:nil];
         [self calclinks:nil];
-        [self processdata1:nil];
-        //[self InsertNewCoords:nil];
+        [self processdata:nil];
         [self setDrawCoords:nil];
         [self scaleDrawCoords:nil];
         [self DrawFin:nil];
@@ -1636,60 +1732,348 @@ y34= y34+step;
     }
 }
 
-
+// Open File, read in data, and calc everything
+- (IBAction)doOpenAnal:(id)sender {
+    [self initvars:nil];
+    NSString *spec, *errspec;
+    NSOpenPanel *theOpenPanel = [NSOpenPanel openPanel];
+    [theOpenPanel setTitle:@"Choose a Coordinate File to Open"];
+    if ([theOpenPanel runModal] == NSModalResponseOK)
+    {
+        //theFilePath = [theOpenPanel filename]; deprecated file identification
+        NSURL *theFile = [theOpenPanel URL];
+        NSString *s = [NSString stringWithContentsOfURL:theFile encoding:NSUTF8StringEncoding error:nil];
+        i=0;
+        NSScanner *scanner = [NSScanner scannerWithString:s];
+        NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        specarray = [[NSMutableArray alloc] init];  // stores species or specimen names
+        [specarray insertObject:@"zero" atIndex:0];  //position zero not used
+        
+        fishx = [[NSMutableArray alloc] init];
+        [fishx insertObject: [NSMutableArray array] atIndex:0];//adds x array at position 0, not used
+        rowx= [fishx objectAtIndex: 0];
+        [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
+        
+        fishy = [[NSMutableArray alloc] init];
+        [fishy insertObject: [NSMutableArray array] atIndex:0];//adds y array at position 0, not used
+        rowy= [fishy objectAtIndex: 0];
+        [rowy insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds y val at position 0, not used
+        
+        rotarray = [[NSMutableArray alloc] init];   // stores fin ray rotations
+        [rotarray insertObject: [NSMutableArray array] atIndex:0];//adds array within array at position 0, not used
+        rowrot= [rotarray objectAtIndex: 0];
+        [rowrot insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds rot val at position 0, not used
+        
+        while ([scanner isAtEnd] == NO) {
+            fishok = 0;
+            i= i+1;
+            [fishx insertObject: [NSMutableArray array] atIndex:i];//adds x array at position i
+            [fishy insertObject: [NSMutableArray array] atIndex:i];//adds y array at position i
+            rowx= [fishx objectAtIndex: i];          //adds x row at position i
+            rowy= [fishy objectAtIndex: i];         //adds y row at position i
+            [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
+            [rowy insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds y val at position 0, not used
+            
+            [scanner scanUpToCharactersFromSet:whiteSpace intoString:&spec];//gets specimen name at start of line
+            [specarray insertObject:spec atIndex:i];  //store specimen name
+            [scanner scanDouble:&x30];   //DIFFERENT ORDER FOR ANAL FIN
+            [scanner scanDouble:&y30];
+            [scanner scanDouble:&x29];
+            [scanner scanDouble:&y29];
+            [scanner scanDouble:&x28];
+            [scanner scanDouble:&y28];
+            [scanner scanDouble:&x27];
+            [scanner scanDouble:&y27];
+            [scanner scanDouble:&x26];
+            [scanner scanDouble:&y26];
+            [scanner scanDouble:&x25];
+            [scanner scanDouble:&y25];
+            [scanner scanDouble:&x24];
+            [scanner scanDouble:&y24];
+            [scanner scanDouble:&x23];
+            [scanner scanDouble:&y23];
+            [scanner scanDouble:&x22];
+            [scanner scanDouble:&y22];
+            [scanner scanDouble:&x21];
+            [scanner scanDouble:&y21];
+            [scanner scanDouble:&x20];
+            [scanner scanDouble:&y20];
+            [scanner scanDouble:&x19];
+            [scanner scanDouble:&y19];
+            [scanner scanDouble:&x18];
+            [scanner scanDouble:&y18];
+            [scanner scanDouble:&x17];
+            [scanner scanDouble:&y17];
+            [scanner scanDouble:&x16];
+            [scanner scanDouble:&y16];
+            [scanner scanDouble:&x15];
+            [scanner scanDouble:&y15];
+            [scanner scanDouble:&x14];
+            [scanner scanDouble:&y14];
+            [scanner scanDouble:&x13];
+            [scanner scanDouble:&y13];
+            [scanner scanDouble:&x12];
+            [scanner scanDouble:&y12];
+            [scanner scanDouble:&x11];
+            [scanner scanDouble:&y11];
+            [scanner scanDouble:&x10];
+            [scanner scanDouble:&y10];
+            [scanner scanDouble:&x9];
+            [scanner scanDouble:&y9];
+            [scanner scanDouble:&x8];
+            [scanner scanDouble:&y8];
+            [scanner scanDouble:&x7];
+            [scanner scanDouble:&y7];
+            [scanner scanDouble:&x6];
+            [scanner scanDouble:&y6];
+            [scanner scanDouble:&x5];
+            [scanner scanDouble:&y5];
+            [scanner scanDouble:&x4];
+            [scanner scanDouble:&y4];
+            [scanner scanDouble:&x3];
+            [scanner scanDouble:&y3];
+            [scanner scanDouble:&x2];
+            [scanner scanDouble:&y2];
+            [scanner scanDouble:&x1];
+            [scanner scanDouble:&y1];
+            [scanner scanDouble:&x32];
+            [scanner scanDouble:&y32];
+            [scanner scanDouble:&x31];
+            [scanner scanDouble:&y31];
+            [scanner scanDouble:&x34];
+            [scanner scanDouble:&y34];
+            [scanner scanDouble:&x33];
+            [scanner scanDouble:&y33];
+          
+            [rowx addObject:[NSNumber numberWithDouble:x1]];
+            [rowx addObject:[NSNumber numberWithDouble:x2]];
+            [rowx addObject:[NSNumber numberWithDouble:x3]];
+            [rowx addObject:[NSNumber numberWithDouble:x4]];
+            [rowx addObject:[NSNumber numberWithDouble:x5]];
+            [rowx addObject:[NSNumber numberWithDouble:x6]];
+            [rowx addObject:[NSNumber numberWithDouble:x7]];
+            [rowx addObject:[NSNumber numberWithDouble:x8]];
+            [rowx addObject:[NSNumber numberWithDouble:x9]];
+            [rowx addObject:[NSNumber numberWithDouble:x10]];
+            [rowx addObject:[NSNumber numberWithDouble:x11]];
+            [rowx addObject:[NSNumber numberWithDouble:x12]];
+            [rowx addObject:[NSNumber numberWithDouble:x13]];
+            [rowx addObject:[NSNumber numberWithDouble:x14]];
+            [rowx addObject:[NSNumber numberWithDouble:x15]];
+            [rowx addObject:[NSNumber numberWithDouble:x16]];
+            [rowx addObject:[NSNumber numberWithDouble:x17]];
+            [rowx addObject:[NSNumber numberWithDouble:x18]];
+            [rowx addObject:[NSNumber numberWithDouble:x19]];
+            [rowx addObject:[NSNumber numberWithDouble:x20]];
+            [rowx addObject:[NSNumber numberWithDouble:x21]];
+            [rowx addObject:[NSNumber numberWithDouble:x22]];
+            [rowx addObject:[NSNumber numberWithDouble:x23]];
+            [rowx addObject:[NSNumber numberWithDouble:x24]];
+            [rowx addObject:[NSNumber numberWithDouble:x25]];
+            [rowx addObject:[NSNumber numberWithDouble:x26]];
+            [rowx addObject:[NSNumber numberWithDouble:x27]];
+            [rowx addObject:[NSNumber numberWithDouble:x28]];
+            [rowx addObject:[NSNumber numberWithDouble:x29]];
+            [rowx addObject:[NSNumber numberWithDouble:x30]];
+            [rowx addObject:[NSNumber numberWithDouble:x31]];
+            [rowx addObject:[NSNumber numberWithDouble:x32]];
+            [rowx addObject:[NSNumber numberWithDouble:x33]];
+            [rowx addObject:[NSNumber numberWithDouble:x34]];
+            
+            [rowy addObject:[NSNumber numberWithDouble:y1]];
+            [rowy addObject:[NSNumber numberWithDouble:y2]];
+            [rowy addObject:[NSNumber numberWithDouble:y3]];
+            [rowy addObject:[NSNumber numberWithDouble:y4]];
+            [rowy addObject:[NSNumber numberWithDouble:y5]];
+            [rowy addObject:[NSNumber numberWithDouble:y6]];
+            [rowy addObject:[NSNumber numberWithDouble:y7]];
+            [rowy addObject:[NSNumber numberWithDouble:y8]];
+            [rowy addObject:[NSNumber numberWithDouble:y9]];
+            [rowy addObject:[NSNumber numberWithDouble:y10]];
+            [rowy addObject:[NSNumber numberWithDouble:y11]];
+            [rowy addObject:[NSNumber numberWithDouble:y12]];
+            [rowy addObject:[NSNumber numberWithDouble:y13]];
+            [rowy addObject:[NSNumber numberWithDouble:y14]];
+            [rowy addObject:[NSNumber numberWithDouble:y15]];
+            [rowy addObject:[NSNumber numberWithDouble:y16]];
+            [rowy addObject:[NSNumber numberWithDouble:y17]];
+            [rowy addObject:[NSNumber numberWithDouble:y18]];
+            [rowy addObject:[NSNumber numberWithDouble:y19]];
+            [rowy addObject:[NSNumber numberWithDouble:y20]];
+            [rowy addObject:[NSNumber numberWithDouble:y21]];
+            [rowy addObject:[NSNumber numberWithDouble:y22]];
+            [rowy addObject:[NSNumber numberWithDouble:y23]];
+            [rowy addObject:[NSNumber numberWithDouble:y24]];
+            [rowy addObject:[NSNumber numberWithDouble:y25]];
+            [rowy addObject:[NSNumber numberWithDouble:y26]];
+            [rowy addObject:[NSNumber numberWithDouble:y27]];
+            [rowy addObject:[NSNumber numberWithDouble:y28]];
+            [rowy addObject:[NSNumber numberWithDouble:y29]];
+            [rowy addObject:[NSNumber numberWithDouble:y30]];
+            [rowy addObject:[NSNumber numberWithDouble:y31]];
+            [rowy addObject:[NSNumber numberWithDouble:y32]];
+            [rowy addObject:[NSNumber numberWithDouble:y33]];
+            [rowy addObject:[NSNumber numberWithDouble:y34]];
+            
+            [rotarray insertObject: [NSMutableArray array] atIndex:i];
+            rowrot= [rotarray objectAtIndex: i];
+            [rowrot insertObject: [NSNumber numberWithDouble:0] atIndex:0];
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rotLE 1
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot1 2
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot2 3
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot3 4
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot4 5
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot5 6
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot6 7
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot7 8
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot8 9
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot9 10
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot10 11
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rotTE 12
+            
+            
+            if (y34==0) {fishok = 1;}
+            if (fishok==1) {
+                errspec = [NSString stringWithFormat:@"%d", i];
+                NSAlert *alert = [[NSAlert alloc] init];
+                //[alert setAlertStyle:NSInformationalAlertStyle];
+                [alert addButtonWithTitle:@"OK"];
+                [alert setMessageText:@"Error: Reading file, number of data items in a line, in specimen #"];
+                [alert setInformativeText: errspec];
+                [alert runModal];}
+            //[alert release];}
+            fishcount=i;
+        } //end if scanner is at end
+        
+        i=1;
+        afin=1;
+        [self CoordsFromArray:nil];
+        [self calclinks:nil];
+        [self processdata:nil];
+        [self setDrawCoords:nil];
+        [self scaleDrawCoords:nil];
+        [self DrawFin:nil];
+        [self datatoscreen:nil];
+        selectedSegment=0;
+        [self setNeedsDisplay:YES];
+    }
+}
 //---------------------------------------------------------------------------------
 // Save datafile.
 
 - (IBAction)savedata:(id)sender{
 
-    NSMutableData *header1, *header2;  //Set up file headers to give labels to columns
-    const char *head1 = " MusData1 Spec A1alpha2 A1beta2 A2alpha2 A2beta1 A2gamma2 A31 sheet LOP pcsaA1a pcsaA1b pcsaA2a pcsaA2b pcsaA2g pcsaA3 pcsaSheet pcsaLOP mforceA1a mforceA1b mforceA2a mforceA2b mforceA2g mforceA3 mforceSheet mforceLOP angA1a2 angA1b2 angA2a2 angA2b1 angA2g2 angA31 angSheet";
+    NSMutableData *header1, *header2, *header3, *header4;  //Set up file headers to give labels to columns
+//Fin Metrics, lengths and areas, both raw and rotated
+    const char *head1 = " Specimen LeadEdge Ray1 Ray2 Ray3 Ray4 Ray5 Ray6 Ray7 Ray8 Ray9 Ray10 TrailEdge FinAxis AreaTotal Area1 Area2 Area3 Area4 Area5 Area6 Area7 Area8 Area9 Area10 Area11 rAreaTotal rArea1 rArea2 rArea3 rArea4 rArea5 rArea6 rArea7 rArea8 rArea9 rArea10 rArea11";
     
-    const char *head2 = " MusData2 Spec emaA1a2 emaA1b2 emaA2a2 emaA2b1 emaA2g2 emaA31 emaSheet emaLOP memaA1a2 memaA1b2 memaA2a2 memaA2b1 memaA2g2 memaA31 memaSheet evrA1a2 evrA1b2 evrA2a2 evrA2b1 evrA2g2 evrA31 evrSheet evrLOP mevrA1a2 mevrA1b2 mevrA2a2 mevrA2b1 mevrA2g2 mevrA31";
+//Spreadfin rotated coords
+    const char *head2 = " Specimen x1 y1 x2 y2 x3 y3 x4 y4 x5 y5 x6 y6 x7 y7 x8 y8 x9 y9 x10 y10 x11 y11 x12 y12 x13 y13 x14 y14 x15 y15 x16 y16 x17 y17 x18 y18 x19 y19 x20 y20 x21 y21 x22 y22 x23 y23 x24 y24 x25 y25 x26 y26 x27 y27 x28 y28 x29 y29 x30 y30 x31 y31 x32 y32 x33 y33 x34 y34 ";
     
+//Rotated flat fin base coords
+    const char *head3 = " Specimen x1 y1 x2 y2 x3 y3 x4 y4 x5 y5 x6 y6 x7 y7 x8 y8 x9 y9 x10 y10 x11 y11 x12 y12 x13 y13 x14 y14 x15 y15 x16 y16 x17 y17 x18 y18 x19 y19 x20 y20 x21 y21 x22 y22 x23 y23 x24 y24 x25 y25 x26 y26 x27 y27 x28 y28 x29 y29 x30 y30 x31 y31 x32 y32 x33 y33 x34 y34 ";
+    
+//Fin Ray user rotation record
+    const char *head4 = " Specimen LeadEdgeRot Ray1Rot Ray2Rot Ray3Rot Ray4Rot Ray5Rot Ray6Rot Ray7Rot Ray8Rot Ray9Rot Ray10Rot TrailEdgeRot";
     
     header1 = [NSMutableData dataWithBytes:head1 length:strlen(head1)];
     header2 = [NSMutableData dataWithBytes:head2 length:strlen(head2)];
+    header3 = [NSMutableData dataWithBytes:head3 length:strlen(head3)];
+    header4 = [NSMutableData dataWithBytes:head4 length:strlen(head4)];
 
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //create array, store documents directory
-    NSString *documentsDirectory = [paths objectAtIndex:0]; //hold path to documents directory
-    NSString *outFilePath1 = [documentsDirectory stringByAppendingPathComponent:@"*MusData1.txt"];
-    [header1 writeToFile:outFilePath1 atomically:YES];
-    NSString *outFilePath2 = [documentsDirectory stringByAppendingPathComponent:@"*MusData2.txt"];
-    [header2 writeToFile:outFilePath2 atomically:YES];
+    //Puts all the files on the desktop
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES); //create array, store documents directory
+    NSString *desktopPath = [paths objectAtIndex:0]; //hold path to desktop directory
     
+//Fin Metrics, lengths and areas- both raw and rotated
+    NSString *outFilePath1 = [desktopPath stringByAppendingPathComponent:@"FinMetrics.txt"];  //write the first file of fin metrics
+    [header1 writeToFile:outFilePath1 atomically:YES]; //puts the column headers in first row
     NSFileHandle *fileHandle1 = [NSFileHandle fileHandleForWritingAtPath:outFilePath1];
     [fileHandle1 seekToEndOfFile];
-    NSFileHandle *fileHandle2 = [NSFileHandle fileHandleForWritingAtPath:outFilePath2];
-    [fileHandle2 seekToEndOfFile];
-    
     i=0;
     while (i<fishcount) {
-        i=i+1; 
-        //jawrot=0;
+        i=i+1;
         [self CoordsFromArray:nil];
         [self calclinks:nil];
-        [self processdata1:nil];
-        [self InsertNewCoords:nil];
-        [self setDrawCoords:nil];
-        [self scaleDrawCoords:nil];
+        [self clearRotState:nil];  //set all rots to pos
+        [self getRot:nil];  //get previously stored rots
+        [self getRotState:nil];  //get previously stored rot states if neg
+        [self SpreadFin:nil];
+        [self processdata:nil];
+        NSString *FinMetrics = [NSString stringWithFormat:@"\r\n %@ %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f", [specarray objectAtIndex: i], leadedge, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, trailedge, finaxis, areatotal, area1, area2, area3, area4, area5, area6, area7, area8, area9, area10, area11, rareatotal, rarea1, rarea2, rarea3, rarea4, rarea5, rarea6, rarea7, rarea8, rarea9, rarea10, rarea11];// 38 vars
+            [fileHandle1 writeData:[FinMetrics dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+     [fileHandle1 closeFile];
+    
+//Spreadfin rotated coords
+    NSString *outFilePath2 = [desktopPath stringByAppendingPathComponent:@"DorsalFinSpreadCoords.txt"];
+    [header2 writeToFile:outFilePath2 atomically:YES];
+    NSFileHandle *fileHandle2 = [NSFileHandle fileHandleForWritingAtPath:outFilePath2];
+    [fileHandle2 seekToEndOfFile];
+    NSString *outFilePath5 = [desktopPath stringByAppendingPathComponent:@"AnalFinSpreadCoords.txt"];
+    [header2 writeToFile:outFilePath5 atomically:YES];
+    NSFileHandle *fileHandle5 = [NSFileHandle fileHandleForWritingAtPath:outFilePath5];
+    [fileHandle5 seekToEndOfFile];
+    i=0;
+    while (i<fishcount) {
+        i=i+1;
+        [self CoordsFromArray:nil];
+        [self calclinks:nil];
+        [self clearRotState:nil];  //set all rots to pos
+        [self getRot:nil];  //get previously stored rots
+        [self getRotState:nil];  //get previously stored rot states if neg
+        [self SpreadFin:nil];
+        [self processdata:nil];
+        if (afin==0) {
+        NSString *NewFinCoords = [NSString stringWithFormat:@"\r\n %@ %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f", [specarray objectAtIndex: i], rx1, ry1, rx2, ry2, rx3, ry3, rx4, ry4, rx5, ry5, rx6, ry6, rx7, ry7, rx8, ry8, rx9, ry9, rx10, ry10, rx11, ry11, rx12, ry12, rx13, ry13, rx14, ry14, rx15, ry15, rx16, ry16, rx17, ry17, rx18, ry18, rx19, ry19, rx20, ry20, rx21, ry21, rx22, ry22, rx23, ry23, rx24, ry24, rx25, ry25, rx26, ry26, rx27, ry27, rx28, ry28, rx29, ry29, rx30, ry30, rx31, ry31, rx32, ry32, rx33, ry33, rx34, ry34];
+            [fileHandle2 writeData:[NewFinCoords dataUsingEncoding:NSUTF8StringEncoding]];}
         
-      /*  NSString *MusData1 = [NSString stringWithFormat:@"\r\n %d %@ %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f", i, spec, A1alpha2, A1beta2, A2alpha2, A2beta1, A2gamma2, A31, sheet, LOP, pcsaA1a, pcsaA1b, pcsaA2a, pcsaA2b, pcsaA2g, pcsaA3, pcsaSheet, pcsaLOP, mforceA1a, mforceA1b, mforceA2a, mforceA2b, mforceA2g, mforceA3, mforceSheet, mforceLOP, angA1a2, angA1b2, angA2a2, angA2b1, angA2g2, angA31, angSheet];// 31 vars
-            [fileHandle1 writeData:[MusData1 dataUsingEncoding:NSUTF8StringEncoding]];
+        if (afin==1) {
+        NSString *NewFinCoords = [NSString stringWithFormat:@"\r\n %@ %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f", [specarray objectAtIndex: i], rx30, ry30, rx29, ry29, rx28, ry28, rx27, ry27, rx26, ry26, rx25, ry25, rx24, ry24, rx23, ry23, rx22, ry22, rx21, ry21, rx20, ry20, rx19, ry19, rx18, ry18, rx17, ry17, rx16, ry16, rx15, ry15, rx14, ry14, rx13, ry13, rx12, ry12, rx11, ry11, rx10, ry10, rx9, ry9, rx8, ry8, rx7, ry7, rx6, ry6, rx5, ry5, rx4, ry4, rx3, ry3, rx2, ry2, rx1, ry1, rx32, ry32, rx31, ry31, rx34, ry34, rx33, ry33];
+            [fileHandle5 writeData:[NewFinCoords dataUsingEncoding:NSUTF8StringEncoding]];}
         
-        NSString *MusData2 = [NSString stringWithFormat:@"\r\n %d %@ %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f %1.4f", i, spec, emaA1a2, emaA1b2, emaA2a2, emaA2b1, emaA2g2, emaA31, emaSheet, emaLOP, memaA1a2, memaA1b2, memaA2a2, memaA2b1, memaA2g2, memaA31, memaSheet, evrA1a2, evrA1b2, evrA2a2, evrA2b1, evrA2g2, evrA31, evrSheet, evrLOP, mevrA1a2, mevrA1b2, mevrA2a2, mevrA2b1, mevrA2g2, mevrA31]; // 29 vars
-            [fileHandle2 writeData:[MusData2 dataUsingEncoding:NSUTF8StringEncoding]];
-        */
-           }
-        
-    [fileHandle1 closeFile];
+    }
     [fileHandle2 closeFile];
+    
+    //Rotated flat fin base coords
+    NSString *outFilePath3 = [desktopPath stringByAppendingPathComponent:@"FinFlatCoords.txt"];
+    [header3 writeToFile:outFilePath3 atomically:YES];
+    NSFileHandle *fileHandle3 = [NSFileHandle fileHandleForWritingAtPath:outFilePath3];
+    [fileHandle3 seekToEndOfFile];
+    i=0;
+    while (i<fishcount) {
+        i=i+1;
+        [self CoordsFromArray:nil];
+        [self calclinks:nil];
+        [self RotateFin:nil];
+        [self processdata:nil];
+        NSString *FlatFinCoords = [NSString stringWithFormat:@"\r\n %@ %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f", [specarray objectAtIndex: i], rx1, rx2, rx3, rx4, rx5, rx6, rx7, rx8, rx9, rx10, rx11, rx12, rx13, rx14, rx15, rx16, rx17, rx18, rx19, rx20, rx21, rx22, rx23, rx24, rx25, rx26, rx27, rx28, rx29, rx30, rx31, rx32, rx33, rx34, ry1, ry2, ry3, ry4, ry5, ry6, ry7, ry8, ry9, ry10, ry11, ry12, ry13, ry14, ry15, ry16, ry17, ry18, ry19, ry20, ry21, ry22, ry23, ry24, ry25, ry26, ry27, ry28, ry29, ry30, ry31, ry32, ry33, ry34];
+        [fileHandle3 writeData:[FlatFinCoords dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [fileHandle3 closeFile];
+    
+    //Fin Rot records
+    NSString *outFilePath4 = [desktopPath stringByAppendingPathComponent:@"FinRots.txt"];
+    [header4 writeToFile:outFilePath4 atomically:YES];
+    NSFileHandle *fileHandle4 = [NSFileHandle fileHandleForWritingAtPath:outFilePath4];
+    [fileHandle4 seekToEndOfFile];
+    i=0;
+    while (i<fishcount) {
+        i=i+1;
+        [self CoordsFromArray:nil];
+        [self calclinks:nil];
+        [self SpreadFin:nil];
+        [self processdata:nil];
+        NSString *FinRots = [NSString stringWithFormat:@"\r\n %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", [specarray objectAtIndex: i], [[rotarray objectAtIndex:i] objectAtIndex:1], [[rotarray objectAtIndex:i] objectAtIndex:2], [[rotarray objectAtIndex:i] objectAtIndex:3], [[rotarray objectAtIndex:i] objectAtIndex:4], [[rotarray objectAtIndex:i] objectAtIndex:5], [[rotarray objectAtIndex:i] objectAtIndex:6], [[rotarray objectAtIndex:i] objectAtIndex:7], [[rotarray objectAtIndex:i] objectAtIndex:8], [[rotarray objectAtIndex:i] objectAtIndex:9], [[rotarray objectAtIndex:i] objectAtIndex:10], [[rotarray objectAtIndex:i]objectAtIndex:11], [[rotarray objectAtIndex:i]objectAtIndex:12]];
+        [fileHandle4 writeData:[FinRots dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [fileHandle4 closeFile];
     
     NSAlert *alert = [[NSAlert alloc] init];
     //[alert setAlertStyle:NSInformationalAlertStyle];
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:@"File Save"];
-    [alert setInformativeText:@"The Output Files Were Saved in Documents Folder"];
+    [alert setInformativeText:@"Files Saved With App or on Desktop"];
     [alert runModal];
     //[alert release];
 }
@@ -1717,7 +2101,7 @@ y34= y34+step;
     {
         //Load up a sample data file
         NSString *spec;
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"FinData5" ofType:@"txt"];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DorsalFin" ofType:@"txt"];
         NSString *s = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         i=0;
         NSScanner *scanner = [NSScanner scannerWithString:s];
@@ -1727,12 +2111,18 @@ y34= y34+step;
         
         fishx = [[NSMutableArray alloc] init];
         [fishx insertObject: [NSMutableArray array] atIndex:0];//adds x array at position 0, not used
-        fishy = [[NSMutableArray alloc] init];
-        [fishy insertObject: [NSMutableArray array] atIndex:0];//adds y array at position 0, not used
         rowx= [fishx objectAtIndex: 0];
         [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
+        
+        fishy = [[NSMutableArray alloc] init];
+        [fishy insertObject: [NSMutableArray array] atIndex:0];//adds y array at position 0, not used
         rowy= [fishy objectAtIndex: 0];
         [rowy insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds y val at position 0, not used
+        
+        rotarray = [[NSMutableArray alloc] init];   // stores fin ray rotations
+        [rotarray insertObject: [NSMutableArray array] atIndex:0];//adds array within array at position 0, not used
+        rowrot= [rotarray objectAtIndex: 0];
+        [rowrot insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds rot val at position 0, not used
         while ([scanner isAtEnd] == NO) {
             fishok = 0;
             i= i+1;
@@ -1742,84 +2132,100 @@ y34= y34+step;
             rowy= [fishy objectAtIndex: i];         //adds y row at position i
             [rowx insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds x val at position 0, not used
             [rowy insertObject: [NSNumber numberWithDouble:0] atIndex:0];//adds y val at position 0, not used
+           
             [scanner scanUpToCharactersFromSet:whiteSpace intoString:&spec];//gets specimen name at start of line
             [specarray insertObject:spec atIndex:i];  //store specimen name
-            [scanner scanDouble:&x1]; [rowx addObject:[NSNumber numberWithDouble:x1]];  //first half of each line is X coords
+            [scanner scanDouble:&x1]; [rowx addObject:[NSNumber numberWithDouble:x1]];  //alternate X-Y coords
+            [scanner scanDouble:&y1]; [rowy addObject:[NSNumber numberWithDouble:y1]];
             [scanner scanDouble:&x2]; [rowx addObject:[NSNumber numberWithDouble:x2]];
-            [scanner scanDouble:&x3]; [rowx addObject:[NSNumber numberWithDouble:x3]];
-            [scanner scanDouble:&x4]; [rowx addObject:[NSNumber numberWithDouble:x4]];
-            [scanner scanDouble:&x5]; [rowx addObject:[NSNumber numberWithDouble:x5]];
-            [scanner scanDouble:&x6]; [rowx addObject:[NSNumber numberWithDouble:x6]];
-            [scanner scanDouble:&x7]; [rowx addObject:[NSNumber numberWithDouble:x7]];
-            [scanner scanDouble:&x8]; [rowx addObject:[NSNumber numberWithDouble:x8]];
-            [scanner scanDouble:&x9]; [rowx addObject:[NSNumber numberWithDouble:x9]];
-            [scanner scanDouble:&x10]; [rowx addObject:[NSNumber numberWithDouble:x10]];
-            [scanner scanDouble:&x11]; [rowx addObject:[NSNumber numberWithDouble:x11]];
-            [scanner scanDouble:&x12]; [rowx addObject:[NSNumber numberWithDouble:x12]];
-            [scanner scanDouble:&x13]; [rowx addObject:[NSNumber numberWithDouble:x13]];
-            [scanner scanDouble:&x14]; [rowx addObject:[NSNumber numberWithDouble:x14]];
-            [scanner scanDouble:&x15]; [rowx addObject:[NSNumber numberWithDouble:x15]];
-            [scanner scanDouble:&x16]; [rowx addObject:[NSNumber numberWithDouble:x16]];
-            [scanner scanDouble:&x17]; [rowx addObject:[NSNumber numberWithDouble:x17]];
-            [scanner scanDouble:&x18]; [rowx addObject:[NSNumber numberWithDouble:x18]];
-            [scanner scanDouble:&x19]; [rowx addObject:[NSNumber numberWithDouble:x19]];
-            [scanner scanDouble:&x20]; [rowx addObject:[NSNumber numberWithDouble:x20]];
-            [scanner scanDouble:&x21]; [rowx addObject:[NSNumber numberWithDouble:x21]];
-            [scanner scanDouble:&x22]; [rowx addObject:[NSNumber numberWithDouble:x22]];
-            [scanner scanDouble:&x23]; [rowx addObject:[NSNumber numberWithDouble:x23]];
-            [scanner scanDouble:&x24]; [rowx addObject:[NSNumber numberWithDouble:x24]];
-            [scanner scanDouble:&x25]; [rowx addObject:[NSNumber numberWithDouble:x25]];
-            [scanner scanDouble:&x26]; [rowx addObject:[NSNumber numberWithDouble:x26]];
-            [scanner scanDouble:&x27]; [rowx addObject:[NSNumber numberWithDouble:x27]];
-            [scanner scanDouble:&x28]; [rowx addObject:[NSNumber numberWithDouble:x28]];
-            [scanner scanDouble:&x29]; [rowx addObject:[NSNumber numberWithDouble:x29]];
-            [scanner scanDouble:&x30]; [rowx addObject:[NSNumber numberWithDouble:x30]];
-            [scanner scanDouble:&x31]; [rowx addObject:[NSNumber numberWithDouble:x31]];
-            [scanner scanDouble:&x32]; [rowx addObject:[NSNumber numberWithDouble:x32]];
-            [scanner scanDouble:&x33]; [rowx addObject:[NSNumber numberWithDouble:x33]];
-            [scanner scanDouble:&x34]; [rowx addObject:[NSNumber numberWithDouble:x34]];
-            
-            [scanner scanDouble:&y1]; [rowy addObject:[NSNumber numberWithDouble:y1]]; //2nd half of each line is Y coords
             [scanner scanDouble:&y2]; [rowy addObject:[NSNumber numberWithDouble:y2]];
+            [scanner scanDouble:&x3]; [rowx addObject:[NSNumber numberWithDouble:x3]];
             [scanner scanDouble:&y3]; [rowy addObject:[NSNumber numberWithDouble:y3]];
+            [scanner scanDouble:&x4]; [rowx addObject:[NSNumber numberWithDouble:x4]];
             [scanner scanDouble:&y4]; [rowy addObject:[NSNumber numberWithDouble:y4]];
+            [scanner scanDouble:&x5]; [rowx addObject:[NSNumber numberWithDouble:x5]];
             [scanner scanDouble:&y5]; [rowy addObject:[NSNumber numberWithDouble:y5]];
+            [scanner scanDouble:&x6]; [rowx addObject:[NSNumber numberWithDouble:x6]];
             [scanner scanDouble:&y6]; [rowy addObject:[NSNumber numberWithDouble:y6]];
+            [scanner scanDouble:&x7]; [rowx addObject:[NSNumber numberWithDouble:x7]];
             [scanner scanDouble:&y7]; [rowy addObject:[NSNumber numberWithDouble:y7]];
+            [scanner scanDouble:&x8]; [rowx addObject:[NSNumber numberWithDouble:x8]];
             [scanner scanDouble:&y8]; [rowy addObject:[NSNumber numberWithDouble:y8]];
+            [scanner scanDouble:&x9]; [rowx addObject:[NSNumber numberWithDouble:x9]];
             [scanner scanDouble:&y9]; [rowy addObject:[NSNumber numberWithDouble:y9]];
+            [scanner scanDouble:&x10]; [rowx addObject:[NSNumber numberWithDouble:x10]];
             [scanner scanDouble:&y10]; [rowy addObject:[NSNumber numberWithDouble:y10]];
+            [scanner scanDouble:&x11]; [rowx addObject:[NSNumber numberWithDouble:x11]];
             [scanner scanDouble:&y11]; [rowy addObject:[NSNumber numberWithDouble:y11]];
+            [scanner scanDouble:&x12]; [rowx addObject:[NSNumber numberWithDouble:x12]];
             [scanner scanDouble:&y12]; [rowy addObject:[NSNumber numberWithDouble:y12]];
+            [scanner scanDouble:&x13]; [rowx addObject:[NSNumber numberWithDouble:x13]];
             [scanner scanDouble:&y13]; [rowy addObject:[NSNumber numberWithDouble:y13]];
+            [scanner scanDouble:&x14]; [rowx addObject:[NSNumber numberWithDouble:x14]];
             [scanner scanDouble:&y14]; [rowy addObject:[NSNumber numberWithDouble:y14]];
+            [scanner scanDouble:&x15]; [rowx addObject:[NSNumber numberWithDouble:x15]];
             [scanner scanDouble:&y15]; [rowy addObject:[NSNumber numberWithDouble:y15]];
+            [scanner scanDouble:&x16]; [rowx addObject:[NSNumber numberWithDouble:x16]];
             [scanner scanDouble:&y16]; [rowy addObject:[NSNumber numberWithDouble:y16]];
+            [scanner scanDouble:&x17]; [rowx addObject:[NSNumber numberWithDouble:x17]];
             [scanner scanDouble:&y17]; [rowy addObject:[NSNumber numberWithDouble:y17]];
+            [scanner scanDouble:&x18]; [rowx addObject:[NSNumber numberWithDouble:x18]];
             [scanner scanDouble:&y18]; [rowy addObject:[NSNumber numberWithDouble:y18]];
+            [scanner scanDouble:&x19]; [rowx addObject:[NSNumber numberWithDouble:x19]];
             [scanner scanDouble:&y19]; [rowy addObject:[NSNumber numberWithDouble:y19]];
+            [scanner scanDouble:&x20]; [rowx addObject:[NSNumber numberWithDouble:x20]];
             [scanner scanDouble:&y20]; [rowy addObject:[NSNumber numberWithDouble:y20]];
+            [scanner scanDouble:&x21]; [rowx addObject:[NSNumber numberWithDouble:x21]];
             [scanner scanDouble:&y21]; [rowy addObject:[NSNumber numberWithDouble:y21]];
+            [scanner scanDouble:&x22]; [rowx addObject:[NSNumber numberWithDouble:x22]];
             [scanner scanDouble:&y22]; [rowy addObject:[NSNumber numberWithDouble:y22]];
+            [scanner scanDouble:&x23]; [rowx addObject:[NSNumber numberWithDouble:x23]];
             [scanner scanDouble:&y23]; [rowy addObject:[NSNumber numberWithDouble:y23]];
+            [scanner scanDouble:&x24]; [rowx addObject:[NSNumber numberWithDouble:x24]];
             [scanner scanDouble:&y24]; [rowy addObject:[NSNumber numberWithDouble:y24]];
+            [scanner scanDouble:&x25]; [rowx addObject:[NSNumber numberWithDouble:x25]];
             [scanner scanDouble:&y25]; [rowy addObject:[NSNumber numberWithDouble:y25]];
+            [scanner scanDouble:&x26]; [rowx addObject:[NSNumber numberWithDouble:x26]];
             [scanner scanDouble:&y26]; [rowy addObject:[NSNumber numberWithDouble:y26]];
+            [scanner scanDouble:&x27]; [rowx addObject:[NSNumber numberWithDouble:x27]];
             [scanner scanDouble:&y27]; [rowy addObject:[NSNumber numberWithDouble:y27]];
+            [scanner scanDouble:&x28]; [rowx addObject:[NSNumber numberWithDouble:x28]];
             [scanner scanDouble:&y28]; [rowy addObject:[NSNumber numberWithDouble:y28]];
+            [scanner scanDouble:&x29]; [rowx addObject:[NSNumber numberWithDouble:x29]];
             [scanner scanDouble:&y29]; [rowy addObject:[NSNumber numberWithDouble:y29]];
+            [scanner scanDouble:&x30]; [rowx addObject:[NSNumber numberWithDouble:x30]];
             [scanner scanDouble:&y30]; [rowy addObject:[NSNumber numberWithDouble:y30]];
+            [scanner scanDouble:&x31]; [rowx addObject:[NSNumber numberWithDouble:x31]];
             [scanner scanDouble:&y31]; [rowy addObject:[NSNumber numberWithDouble:y31]];
+            [scanner scanDouble:&x32]; [rowx addObject:[NSNumber numberWithDouble:x32]];
             [scanner scanDouble:&y32]; [rowy addObject:[NSNumber numberWithDouble:y32]];
+            [scanner scanDouble:&x33]; [rowx addObject:[NSNumber numberWithDouble:x33]];
             [scanner scanDouble:&y33]; [rowy addObject:[NSNumber numberWithDouble:y33]];
+            [scanner scanDouble:&x34]; [rowx addObject:[NSNumber numberWithDouble:x34]];
             [scanner scanDouble:&y34]; [rowy addObject:[NSNumber numberWithDouble:y34]];
+            
+            [rotarray insertObject: [NSMutableArray array] atIndex:i];
+            rowrot= [rotarray objectAtIndex: i];
+            [rowrot insertObject: [NSNumber numberWithDouble:0] atIndex:0];
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rotLE 1
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot1 2
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot2 3
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot3 4
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot4 5
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot5 6
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot6 7
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot7 8
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot8 9
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot9 10
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rot10 11
+            [rowrot addObject:[NSNumber numberWithDouble:0]];  //rotTE 12
             fishcount=i;
               } //end if scanner is at end
         i=1;
         [self initvars:nil];
         [self CoordsFromArray:nil];
         [self calclinks:nil];
-        [self processdata1:nil];
+        [self processdata:nil];
         [self setDrawCoords:nil];
         [self scaleDrawCoords:nil];
         [self DrawFin:nil];
@@ -1850,7 +2256,7 @@ y34= y34+step;
 		case 0:         //DrawRaw
             [self CoordsFromArray:nil];
             [self calclinks:nil];
-            [self processdata1:nil];
+            [self processdata:nil];
             //[self InsertNewCoords:nil];
             [self setDrawCoords:nil];
             [self scaleDrawCoords:nil];
@@ -1858,40 +2264,36 @@ y34= y34+step;
             [self datatoscreen:nil];
             [self setNeedsDisplay:YES];
             selectedSegment=0;
-            break;
+        break;
             
 		case 1:         //Draw rotated flat
             [self CoordsFromArray:nil];
             [self calclinks:nil];
-            [self processdata1:nil];
             [self RotateFin:nil];  //also sets the DrawCoords
-                    //[self setDrawCoords:nil];
+            [self processdata:nil];
             [self scaleDrawCoords:nil];
             [self DrawFin:nil];
             [self datatoscreen:nil];
             [self setNeedsDisplay:YES];
             selectedSegment=1;
-            break;
+        break;
             
         case 2:     //Draw SpreadFin with rays rotated
             [self CoordsFromArray:nil];
             [self calclinks:nil];
-            [self processdata1:nil];
             [self SpreadFin:nil];
-            //[self setDrawCoords:nil];
+            [self processdata:nil];
             [self scaleDrawCoords:nil];
             [self DrawFin:nil];
             [self datatoscreen:nil];
             [self setNeedsDisplay:YES];
             selectedSegment=2;
            
-            break;
+        break;
         
-    }//end switch selected segment
+    }    //end switch selected segment
     
-}
-
-// end drawrect
+}    // end drawrect
 
 //---------------------------------------------------------------------------------
 - (void)dealloc

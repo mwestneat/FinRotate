@@ -12,6 +12,7 @@
     double sidea, sideb, sidec, angab, angac, angbc, scalebar, scaledraw, finslope, rotang, xhop, yhop;
     double leadedge, trailedge, finaxis, dfinaxis,f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
     double area1, area2, area3, area4, area5, area6, area7, area8, area9, area10, area11, areatotal;
+    double rarea1, rarea2, rarea3, rarea4, rarea5, rarea6, rarea7, rarea8, rarea9, rarea10, rarea11, rareatotal;
     double rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10, rotLE, rotTE; //fin rotation inputs
     double d31to1, d1to2, d2to3, d3to4, d4to5, d5to6, d6to33;  //leading edge pieces
     double d32to20, d20to19, d19to18, d18to17, d17to34;  //trailing edge pieces
@@ -33,13 +34,13 @@
     //New fin coords after manipulation
 	double nx1, ny1, nx2, ny2, nx3, ny3, nx4, ny4, nx5, ny5, nx6, ny6, nx7, ny7, nx8, ny8, nx9, ny9, nx10, ny10, nx11, ny11, nx12, ny12, nx13, ny13, nx14, ny14, nx15, ny15, nx16, ny16, nx17, ny17, nx18, ny18, nx19, ny19, nx20, ny20, nx21, ny21, nx22, ny22, nx23, ny23, nx24, ny24, nx25, ny25, nx26, ny26, nx27, ny27, nx28, ny28, nx29, ny29, nx30, ny30, nx31, ny31, nx32, ny32, nx33, ny33, nx34, ny34;
 	
-    int i, fishcount, rot, fishok, h, z, holdi, xstart, ystart, scale, check1, check2, check3, step;
+    int i, fishcount, fishok, h, z, rotfin, rotray, holdi, xstart, ystart, scale, check1, check2, check3, step, afin;
     
     __unsafe_unretained NSWindow *window;
     
-    NSMutableArray *specarray;
+    NSMutableArray *specarray, *rotarray;
     
-    NSMutableArray *fishx, *fishy, *rowx, *rowy;
+    NSMutableArray *fishx, *fishy, *rowx, *rowy, *rowrot;
     
     NSPoint pt[100];
     NSInteger selectedSegment;
@@ -56,14 +57,15 @@
     __unsafe_unretained IBOutlet NSButton *downButton;
     __unsafe_unretained IBOutlet NSButton *leftButton;
     __unsafe_unretained IBOutlet NSButton *rightButton;
-    IBOutlet NSTextField *data1, *data2, *data3, *data4, *data5, *data6, *data7, *data8, *data9, *data10, *data11, *data12, *data13, *data14, *data15, *data16, *data17, *data18, *data19, *data20, *data21, *data22, *data23, *data24, *data25, *data26, *data27, *data28, *data29, *data30, *data31, *data32, *data33, *data34, *data35, *data36, *data37, *data38, *data39, *data40, *data41, *data42, *data43, *data44, *data45, *data46, *data47, *data48, *data49, *data50, *data51;
+    IBOutlet NSTextField *data1, *data2, *data3, *data4, *data5, *data6, *data7, *data8, *data9, *data10, *data11, *data12, *data13, *data14, *data15, *data16, *data17, *data18, *data19, *data20, *data21, *data22, *data23, *data24, *data25, *data26, *data27, *data28, *data29, *data30, *data31, *data32, *data33, *data34, *data35, *data36, *data37, *data38, *data39, *data40, *data41, *data42, *data43, *data44, *data45, *data46, *data47, *data48, *data49, *data50, *data51, *data52, *data53, *data54, *data55, *data56, *data57, *data58, *data59, *data60, *data61;
+    IBOutlet NSButton *LEneg, *R1neg, *R2neg, *R3neg, *R4neg, *R5neg, *R6neg, *R7neg, *R8neg, *R9neg, *R10neg, *TEneg;
 }
 
 @property (unsafe_unretained) IBOutlet NSWindow *window;
 @property (unsafe_unretained) IBOutlet NSButton *openButton, *nextFinButton, *prevFinButton, *saveButton;
 @property (unsafe_unretained) IBOutlet NSButton *magnifyButton, *reduceButton, *upButton, *downButton, *leftButton, *rightButton;
 @property double rotLE, rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10, rotTE;
-//@property int bins, opendur, jawrot;
+
 - (IBAction)initvars:(id)sender;
 - (IBAction)doOpen:(id)sender;
 - (IBAction)changeSegment:(id)sender;

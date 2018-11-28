@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../../../Developer/FinRotate/FinRotate/en.lproj/MainMenu.xib">
+      location = "group:/Developer/FinRotateNew/FinRotate/FinRotate.m">
    </FileRef>
    <FileRef
       location = "self:">

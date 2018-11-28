@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2DFE4A20B7461600CB10CF /* DorsalFin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DFE4920B7461600CB10CF /* DorsalFin.txt */; };
 		3C5CF480207185C90013DFC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF47F207185C90013DFC6 /* AppDelegate.m */; };
 		3C5CF483207185C90013DFC6 /* FinRotate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF481207185C90013DFC6 /* FinRotate.xcdatamodeld */; };
 		3C5CF485207185C90013DFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C5CF484207185C90013DFC6 /* Assets.xcassets */; };
 		3C5CF48B207185C90013DFC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF48A207185C90013DFC6 /* main.m */; };
 		3C5CF496207185CA0013DFC6 /* FinRotateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF495207185CA0013DFC6 /* FinRotateTests.m */; };
 		3C5CF4A1207185CA0013DFC6 /* FinRotateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF4A0207185CA0013DFC6 /* FinRotateUITests.m */; };
-		3C5CF4B02071865D0013DFC6 /* FinRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CF4AF2071865C0013DFC6 /* FinRotate.m */; };
 		3CAC8AB82072B2AB00A56E64 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8AB72072B2AB00A56E64 /* MainMenu.xib */; };
-		3CB8758720744B1900621DE9 /* FinData5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8758620744B1900621DE9 /* FinData5.txt */; };
+		3CAD7A7320767FB900D09768 /* FinRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAD7A7220767FB900D09768 /* FinRotate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C2DFE4920B7461600CB10CF /* DorsalFin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DorsalFin.txt; sourceTree = "<group>"; };
 		3C5CF47B207185C90013DFC6 /* FinRotate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinRotate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5CF47E207185C90013DFC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C5CF47F207185C90013DFC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,10 +51,9 @@
 		3C5CF49C207185CA0013DFC6 /* FinRotateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinRotateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5CF4A0207185CA0013DFC6 /* FinRotateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinRotateUITests.m; sourceTree = "<group>"; };
 		3C5CF4A2207185CA0013DFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C5CF4AE2071865C0013DFC6 /* FinRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinRotate.h; path = /Developer/FinRotateNew/FinRotate/FinRotate.h; sourceTree = "<absolute>"; };
-		3C5CF4AF2071865C0013DFC6 /* FinRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinRotate.m; sourceTree = "<group>"; };
 		3CAC8AB72072B2AB00A56E64 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		3CB8758620744B1900621DE9 /* FinData5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FinData5.txt; sourceTree = "<group>"; };
+		3CAD7A7120767F9800D09768 /* FinRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinRotate.h; sourceTree = "<group>"; };
+		3CAD7A7220767FB900D09768 /* FinRotate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FinRotate.m; path = /Developer/FinRotateNew/FinRotate/FinRotate.m; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +104,9 @@
 		3C5CF47D207185C90013DFC6 /* FinRotate */ = {
 			isa = PBXGroup;
 			children = (
-				3C5CF4AE2071865C0013DFC6 /* FinRotate.h */,
+				3CAD7A7120767F9800D09768 /* FinRotate.h */,
+				3CAD7A7220767FB900D09768 /* FinRotate.m */,
 				3CAC8AB72072B2AB00A56E64 /* MainMenu.xib */,
-				3C5CF4AF2071865C0013DFC6 /* FinRotate.m */,
 				3C5CF47E207185C90013DFC6 /* AppDelegate.h */,
 				3C5CF47F207185C90013DFC6 /* AppDelegate.m */,
 				3C5CF484207185C90013DFC6 /* Assets.xcassets */,
@@ -114,7 +114,7 @@
 				3C5CF48A207185C90013DFC6 /* main.m */,
 				3C5CF48C207185C90013DFC6 /* FinRotate.entitlements */,
 				3C5CF481207185C90013DFC6 /* FinRotate.xcdatamodeld */,
-				3CB8758620744B1900621DE9 /* FinData5.txt */,
+				3C2DFE4920B7461600CB10CF /* DorsalFin.txt */,
 			);
 			path = FinRotate;
 			sourceTree = "<group>";
@@ -204,7 +204,12 @@
 				TargetAttributes = {
 					3C5CF47A207185C90013DFC6 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					3C5CF490207185CA0013DFC6 = {
 						CreatedOnToolsVersion = 9.1;
@@ -244,8 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C5CF485207185C90013DFC6 /* Assets.xcassets in Resources */,
+				3C2DFE4A20B7461600CB10CF /* DorsalFin.txt in Resources */,
 				3CAC8AB82072B2AB00A56E64 /* MainMenu.xib in Resources */,
-				3CB8758720744B1900621DE9 /* FinData5.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +277,7 @@
 			files = (
 				3C5CF483207185C90013DFC6 /* FinRotate.xcdatamodeld in Sources */,
 				3C5CF48B207185C90013DFC6 /* main.m in Sources */,
-				3C5CF4B02071865D0013DFC6 /* FinRotate.m in Sources */,
+				3CAD7A7320767FB900D09768 /* FinRotate.m in Sources */,
 				3C5CF480207185C90013DFC6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,13 +421,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FinRotate/FinRotate.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4HL98WMMSB;
 				INFOPLIST_FILE = FinRotate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -430,13 +438,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FinRotate/FinRotate.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4HL98WMMSB;
 				INFOPLIST_FILE = FinRotate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = uofc.FinRotate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
