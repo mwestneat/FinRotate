@@ -4,9 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/FinData5.txt</key>
+		<key>Resources/DorsalFin.txt</key>
 		<data>
-		ckgmWbM2f4eSDW4A9tbqsz6vYQo=
+		ZrMRZUbTP7aOajy+VX9Y+/2Yams=
 		</data>
 		<key>Resources/FinRotate.momd/FinRotate.mom</key>
 		<data>
@@ -22,47 +22,20 @@
 		</data>
 		<key>Resources/MainMenu.nib</key>
 		<data>
-		mi3CSzj2esSD3Ae+qrlWYBckgYo=
+		otC23pRpZ54xDSEFLplusJrXnio=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/IDEBundleInjection.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			zNqD1/r312wkZDTgfHKD6uq2vQs=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"ccda83d7faf7d76c246434e07c7283eaeab6bd0b" or cdhash H"89dd98b8d8fd4e068ae9ec0237eaba720ddb2c13"</string>
-		</dict>
-		<key>Frameworks/XCTest.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			/VzgPQhGbuoLs4CKUoX5rqk2yWA=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"fd5ce03d08466eea0bb3808a5285f9aea936c960" or cdhash H"3cee49837c218d4a2d069792b93d4abb8328b070"</string>
-		</dict>
-		<key>PlugIns/FinRotateTests.xctest</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			wi3DWCx0mswNKzP+zowp5Ivq9o4=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"c22dc3582c749acc0d2b33fece8c29e48beaf68e"</string>
-		</dict>
-		<key>Resources/FinData5.txt</key>
+		<key>Resources/DorsalFin.txt</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ckgmWbM2f4eSDW4A9tbqsz6vYQo=
+			ZrMRZUbTP7aOajy+VX9Y+/2Yams=
 			</data>
 			<key>hash2</key>
 			<data>
-			UY1HTtJAltAW50ZmMb7lX9fxviPBrvue9cwoKD0Fw5c=
+			F0J7ARa64UHEVebNGhq/4Q0B+HIhp185A8M+yxqEBWg=
 			</data>
 		</dict>
 		<key>Resources/FinRotate.momd/FinRotate.mom</key>
@@ -102,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mi3CSzj2esSD3Ae+qrlWYBckgYo=
+			otC23pRpZ54xDSEFLplusJrXnio=
 			</data>
 			<key>hash2</key>
 			<data>
-			coEMjOScQl1TZty7FuF7WsKyIc8zm30Y7tk1Dj1yQwE=
+			9osZ+fvGtGB9OfApQYtmRaqJ9BnLUPTJjCozpm1lnFo=
 			</data>
 		</dict>
 	</dict>
